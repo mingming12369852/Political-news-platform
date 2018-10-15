@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>wtF</title>
+  </script>
+</head>
+
+<body>
+  <script>
+    //10;15
+    function test(){
+    var x = [2,9,8,6,4,2,5,1,8];
+    var y = [];
+
+    console.log(x);
+
+  for (var i = 0; i < x.length; i++) {
+    for (var z = 1; z < x.length; z++) {
+
+      if(x[i] < x[z]){ //前比後
+      y[i] = x[z] ; // 後先放
+      x[z] = x[i] ;
+      //位子互換
+      break;
+     }else {
+      y[i] = x[i];
+    }
+  }
+
+  }
+
+  console.log(y);
+}
+
+</script>
+  <h1>my code</h1>
+
+  <button type="button" onclick="test()">:D</button>
+
+</body>
+
+</html>
