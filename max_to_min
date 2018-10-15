@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>wtF</title>
+
+  </script>
+</head>
+
+<body>
+
+  <script>
+    function test(){
+    var x = [15,6,54,19];
+    var y = [];
+
+console.log(x);
+
+
+  for (var i = 0; i < x.length; i++) {
+    console.log(i+"===");
+
+    for (var n = 0; n < x.length ; n++) {
+      if (x[i] < x[n] ) {
+        console.log(x[i] , x[n]);
+         y[i] = x[n];
+
+      for (var m = 0; m < x.length; m++) {
+        if (y[i] < x[m] ) {
+
+          console.log("二" +y[i] , x[m] );
+            y[i] = x[m];
+            x[m] = 0;
+        console.log(y[i]);
+        }
+      }
+
+      }
+
+    }
+
+
+  }
+
+  console.log(y);
+}
+
+
+
+//
+//
+// for (var i = 0; i < x.length; i++) {
+// console.log("第"+i+"次======");
+//
+//   for (var n = 0; n < x.length; n++) {
+//     if (x[i] < x[n]) {
+//       console.log(x[i]+"x[i]",x[n]+"x[n]++比較");
+//       y[i] = x[n];
+//
+//       for (var o = 0; o < x.length; o++) {
+//         if (y[i] < x[o]) {
+//
+//             y[i] = x[o];
+//
+//           console.log(y[i]+"第"+i+ "y[i]的職");
+//
+//         }
+//         }
+//
+//     } else if (x[i] > x[n]) {
+//       y[i] = x[i];
+//         console.log("HI");
+//     }
+//
+//
+//
+//     }
+//   }
+</script>
+  <h1>my code</h1>
+
+  <button type="button" onclick="test()">:D</button>
+
+</body>
+
+</html>
