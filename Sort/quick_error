@@ -1,0 +1,24 @@
+    function quick_sort() {
+      var A = [9, 5, 2, 3];
+      var B = [];
+      var tem, nubmer;
+
+      for (var i = 0; i < 1; i++) {
+        tem = 0;
+        nubmer = 0;
+        for (var k = 1; k < A.length; k++) {
+          if (A[k] = "") {
+          } else {
+            if (A[nubmer] > A[k]) {
+              B[tem] = A[k];
+              A[k] = "";
+              tem++;
+              B[tem] = "";
+            }
+          }
+        }
+        A = B + A;
+        tem = 0;
+      }
+
+  }
