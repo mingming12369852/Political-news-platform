@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+  <meta charset="utf-8">
+  <title>台北生活，不受限</title>
+
+
+  <style src="text/css">
+    #top {
+      background-color: rgb(196, 222, 97);
+    }
+    #backcolor{
+  width: 0px auto;
+  height: 75px;
+      background: -webkit-linear-gradient(left,rgb(141, 255, 0),rgb(5, 0, 255));
+    }
+    p{
+      font-size:10px;
+    }
+  </style>
+
+
+</head>
+
+<body>
+  <!--   http://127.0.0.1/html_/NodsCode/result.JSON  -->
+  <script type="text/javascript">
+    var dataURL = "http://127.0.0.1/html_/NodsCode/result.JSON";
+    var request = new XMLHttpRequest();
+
+    request.open('GET', dataURL);
+    request.responseType = 'json';
+    request.send();
+
+    request.onload = function() {
+      var superHerose = request.response;
+      populeateHeader(superHerose);
+    }
+
+    function populeateHeader(jsonObj) {
+      var myH1 = document.createElement('h1');
+      var br = document.createElement("br");
+      for (var i = 0; i < jsonObj.length; i++) {
+        myH1.innerText += jsonObj[i] + "\n";
+
+        document.getElementById('text').append(myH1);
+      }
+    }
+  </script>
+
+
+  <!-- 頭頂 -->
+  <div id="top">
+    <h1>歡迎光臨 - 新聞平台。</h1>
+    <h2>[首頁] [空汙] [新聞] [天氣] [政治] [關鍵字]</h2>
+
+  </div>
+
+  <!-- 爬蟲的code.js
+  <script src="NodsCode/nods01.js"></script> -->
+
+  <a></a>
+  <div id="backcolor">
+    民視 三立 自由 風媒傳 ~ 聯合 TVBS 中天
+  </div>
+  <p type="button" id="text">自由時報</p>
+  <button type="button" id="text">自由時報</button>
+
+<div class="">
+目前已完成<br>
+(每日自動更新)<br>
+>自由時報<br>
+>華視<br>
+<br>
+(暫時無法加入)<br>
+>民視 URL:https://news.ftv.com.tw/news/overview/POL<br>
+<br>
+</div>
+
+</body>
+
+
+</html>
