@@ -29,5 +29,6 @@ request({
     result.push($(titles[i]).text());
   }
 
+
   fs.writeFileSync("result.json", JSON.stringify(result));
 });
