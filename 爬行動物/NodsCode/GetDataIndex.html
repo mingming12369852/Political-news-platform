@@ -2,71 +2,32 @@
 <html lang="en" dir="ltr">
 
 <head>
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
   <meta charset="utf-8">
   <title>台北生活，不受限</title>
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
-  </style>
-  <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-  <!-- WEB.css -->
+
+
   <style src="text/css">
     #top {
-        background-color: rgb(196, 222, 97);
+      background-color: rgb(196, 222, 97);
     }
-    #text p{
-        font-size:10px;
+    #backcolor{
+  width: 0px auto;
+  height: 75px;
+      background: -webkit-linear-gradient(left,rgb(141, 255, 0),rgb(5, 0, 255));
     }
-    #index-top {
-        background: -webkit-linear-gradient(left,rgb(110, 199, 0),rgb(5, 0, 255));
-
-    }
-    #index-top a{
-
-        font-size: 100%;
-        color:rgb(255, 255, 255);
-    }
-
-    #faler-body{
-        background-color: rgb(107, 178, 255);
-        width:100%;
-        height:100%;
-        z-index:1;
-        position:absolute;
-    }
-
-    #mid{
-        width: atom;
-
-        position:absolute;
-        left:50%;
-        top: 50%;
-        margin-left: -220px;
-      }
-    #mid-butt{
-      width:480;
-      }
-
-    #Green{
-      background:-webkit-linear-gradient(left,rgb(4, 255, 14),rgb(166, 255, 209));
-    }
-    #Black{
-      background-color: rgb(117, 117, 117);
-    }
-    #Blue{
-      background:-webkit-linear-gradient(right,rgb(76, 83, 250),rgb(152, 159, 255));
+    p{
+      font-size:10px;
     }
   </style>
-  <!-- 收起選單 -->
-  <script type="text/javascript">
-    function position(number) {
-      console.log(number);
-      $('#faler-body').slideUp("slow");
-    }
-  </script>
 
-  <!-- 抓取本地 .json 打印到hmtl 頁面上。 -->
-  <script type="text/javascript">
-    var dataURL = "http://127.0.0.1/html_/js/爬行動物/NodsCode/result.json";
 
+</head>
+
+<body>
+  <!--   http://127.0.0.1/html_/NodsCode/result.JSON  -->
+  <script type="text/javascript">
+    var dataURL = "http://127.0.0.1/html_/NodsCode/result.JSON";
     var request = new XMLHttpRequest();
 
     request.open('GET', dataURL);
@@ -79,7 +40,7 @@
     }
 
     function populeateHeader(jsonObj) {
-      var myH1 = document.createElement('p');
+      var myH1 = document.createElement('h1');
       var br = document.createElement("br");
       for (var i = 0; i < jsonObj.length; i++) {
         myH1.innerText += jsonObj[i] + "\n";
@@ -89,125 +50,34 @@
     }
   </script>
 
-</head>
 
-<body>
-
-  <!-- 中央選單 -->
-  <div id="faler-body">
-    <div id="mid">
-      <div id="mid-butt" class="alert alert-primary">
-        <p>請問你的"政治"立場?</p>
-        <button type="button" class="but btn-outline-success btn-lg" Onclick="position('Green')" ;>我是綠色底子</button>
-        <button type="button" class="but btn-outline-dark btn-lg" Onclick="position('Black');" ;>我是中立</button>
-        <button type="button" class="but btn-outline-primary btn-lg" Onclick="position('Blue')" ;>我是藍色底子</button>
-        <p class="nav justify-content-end">這會影響到你瀏覽時的動態資訊。</p>
-      </div>
-    </div>
-  </div>
-
-  <!-- 標題 -->
+  <!-- 頭頂 -->
   <div id="top">
-    <h1>新聞集資平台。</h1>
-    <p class="text-right">抑止錯誤資訊，你我有責。</p>
-    政治光譜
-  </div>
-
-  <!-- 各家新聞-->
-  <ul class="nav justify-content-center" id="index-top">
-    <li class="nav-item">
-      <a href="#" class="nav-link active">民視</a>
-    </li>
-
-    <li class="nav-item">
-      <a href="#" class="nav-link">三立</a>
-    </li>
-
-    <li class="nav-item">
-      <a href="#" class="nav-link">年代新聞</a>
-    </li>
-
-    <li class="nav-item">
-      <a href="#" class="nav-link">自由</a>
-    </li>
-
-    <li class="nav-item">
-      <a href="#" class="nav-link">風媒端</a>
-    </li>
-
-    <li class="nav-item">
-      <a href="#" class="nav-link">聯合</a>
-    </li>
-    <li class="nav-item">
-      <a href="#" class="nav-link">TVBS</a>
-    </li>
-
-    <li class="nav-time">
-      <a href="#" class="nav-link">東森</a>
-    </li>
-
-    <li class="nav-item">
-      <a href="#" class="nav-link">中天</a>
-    </li>
-
-    <li class="nav-item">
-      <a href="#" class="nav-link disabled"></a>
-    </li>
-  </ul>
-
-  <!-- 所有新聞標題 -->
-  <div class="container">
-
-    <!-- 綠色底子 -->
-    <div class="row" id="Green">
-
-      <div class="col">
-        民視
-      </div>
-
-      <div class="col">
-        三立
-      </div>
-
-      <div class="col">
-        年代
-      </div>
-
-      <div class="col">
-        自由時報
-        <p id="text"></p>
-      </div>
-
-    </div>
-
-    <!-- 中立 -->
-    <div class="row" id="Black">
-
-      <div class="col">
-        風端媒
-        <p>dddddddddddddddddddddddddddddddddd</p>
-      </div>
-      <div class="col">
-        聯合
-        <p>dddddddddddddddddddddddddddddddddd</p>
-      </div>
-    </div>
-
-    <!-- 藍色底子 -->
-    <div class="row" id="Blue">
-      <div class="col">
-        TVBS
-      </div>
-      <div class="col">
-        東森
-      </div>
-      <div class="col">
-        中天
-      </div>
-    </div>
+    <h1>歡迎光臨 - 新聞平台。</h1>
+    <h2>[首頁] [空汙] [新聞] [天氣] [政治] [關鍵字]</h2>
 
   </div>
 
+  <!-- 爬蟲的code.js
+  <script src="NodsCode/nods01.js"></script> -->
+
+  <a></a>
+  <div id="backcolor">
+    民視 三立 自由 風媒傳 ~ 聯合 TVBS 中天
+  </div>
+  <p type="button" id="text">自由時報</p>
+  <button type="button" id="text">自由時報</button>
+
+<div class="">
+目前已完成<br>
+(每日自動更新)<br>
+>自由時報<br>
+>華視<br>
+<br>
+(暫時無法加入)<br>
+>民視 URL:https://news.ftv.com.tw/news/overview/POL<br>
+<br>
+</div>
 
 </body>
 
