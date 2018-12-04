@@ -62,14 +62,12 @@
       $('#faler-body').slideUp("slow");
     }
   </script>
-
   <!-- 抓取本地 .json 打印到hmtl 頁面上。 -->
   <script type="text/javascript">
-    var dataURL = "http://127.0.0.1/html_/js/爬行動物/NodsCode/result.json";
-
+    var Liberty_Times = "http://127.0.0.1/html_/js/爬行動物/NodsCode/result.json";
     var request = new XMLHttpRequest();
 
-    request.open('GET', dataURL);
+    request.open('GET', Liberty_Times);
     request.responseType = 'json';
     request.send();
 
@@ -85,6 +83,7 @@
         myH1.innerText += jsonObj[i] + "\n";
 
         document.getElementById('text').append(myH1);
+        ;
       }
     }
   </script>
@@ -93,7 +92,7 @@
 
 <body>
 
-  <!-- 中央選單 -->
+  <!-- 首頁選單 -->
   <div id="faler-body">
     <div id="mid">
       <div id="mid-butt" class="alert alert-primary">
@@ -109,11 +108,11 @@
   <!-- 標題 -->
   <div id="top">
     <h1>新聞集資平台。</h1>
-    <p class="text-right">抑止錯誤資訊，你我有責。</p>
+    <p class="text-right">-</p>
     政治光譜
   </div>
 
-  <!-- 各家新聞-->
+  <!-- 政治光譜-->
   <ul class="nav justify-content-center" id="index-top">
     <li class="nav-item">
       <a href="#" class="nav-link active">民視</a>
@@ -141,7 +140,9 @@
     <li class="nav-item">
       <a href="#" class="nav-link">TVBS</a>
     </li>
-
+    <li class="nav-itme">
+      <a href="#" class="nav-link">華視</a>
+    </li>
     <li class="nav-time">
       <a href="#" class="nav-link">東森</a>
     </li>
@@ -199,6 +200,9 @@
         TVBS
       </div>
       <div class="col">
+        華視
+      </div>
+      <div class="col">
         東森
       </div>
       <div class="col">
@@ -208,7 +212,7 @@
 
   </div>
 
-hi
+  hi
 </body>
 
 
