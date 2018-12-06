@@ -26,7 +26,7 @@ request({
   var titles = $('.list p');
 
   for (var i = 0; i < titles.length; i++) {
-    result.push($(titles[i]).text());
+    result.push( $(titles[i]).text() );
   }
 
 
