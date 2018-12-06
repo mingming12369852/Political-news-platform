@@ -54,7 +54,7 @@
     #Blue{
       background:-webkit-linear-gradient(right,rgb(76, 83, 250),rgb(152, 159, 255));
     }
-              </style>
+  </style>
   <!-- 收起選單 -->
   <script type="text/javascript">
     function position(number) {
@@ -68,7 +68,7 @@
     var request = new XMLHttpRequest();
 
     request.open('GET', Liberty_Times);
-    request.responseType = ' json';
+    request.responseType = 'json';
     request.send();
 
     request.onload = function() {
@@ -82,12 +82,11 @@
       for (var i = 0; i < jsonObj.length; i++) {
         myH1.innerText += jsonObj[i] + "\n";
 
-        document.getElementById('text').append(myH1);;
+        document.getElementById('text').append(myH1);
+        ;
       }
     }
   </script>
-
-
 
 </head>
 
@@ -99,7 +98,7 @@
       <div id="mid-butt" class="alert alert-primary">
         <p>請問你的"政治"立場?</p>
         <button type="button" class="but btn-outline-success btn-lg" Onclick="position('Green')" ;>我是綠色底子</button>
-        <button type="button" class="but btn-outline-dark btn-lg" Onclick="position('Black');" ;>全部都要</button>
+        <button type="button" class="but btn-outline-dark btn-lg" Onclick="position('Black');" ;>我是中立</button>
         <button type="button" class="but btn-outline-primary btn-lg" Onclick="position('Blue')" ;>我是藍色底子</button>
         <p class="nav justify-content-end">這會影響到你瀏覽時的動態資訊。</p>
       </div>
