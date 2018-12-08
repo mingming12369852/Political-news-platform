@@ -1,20 +1,8 @@
-//年月日
-
-
 var request = require("request");
 var cheerio = require("cheerio");
 var fs = require("fs");
 
-
-var Today = new Date();
-var date = Today.getDate();
-var setDat;
-
-if (date < 10) {
-  date = "0" + date;
-}
-setDat = (Today.getFullYear() + "" + (Today.getMonth() + 1) + "" + date);
-var freeUrl = "http://news.ltn.com.tw/list/newspaper/politics/" + setDat;
+var freeUrl = "https://udn.com/news/cate/2/6638";
 
 var result = []; //自由時報
 
@@ -26,19 +14,13 @@ request({
     return;
   }
   var $ = cheerio.load(b);
-  var titles = $('.list p');
+  var titles = $('.listing h2');
 
 
   for (var i = 0; i < titles.length; i++) {
     result.push($(titles[i]).text());
   }
-<<<<<<< HEAD
 
-
-=======
-  
-  console.log("自由時報");
->>>>>>> 74aa6c998b0dca85f85924a074b9fe673fe6fb5c
   fs.writeFileSync("result.json", JSON.stringify(result));
 });
 

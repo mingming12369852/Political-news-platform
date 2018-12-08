@@ -25,6 +25,7 @@ const earthquake = function () {
       const location = table_td.eq(6).text(); // location (位置)
       const url = table_td.eq(7).text(); // url (網址)
       // 建立物件並(push)存入結果
+      
       result.push(Object.assign({ time, latitude, longitude, amgnitude, depth, location, url }));
     }
     // 在終端機(console)列出結果
