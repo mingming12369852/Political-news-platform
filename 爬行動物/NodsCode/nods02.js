@@ -63,7 +63,7 @@ function getData(url, method, getname) {
       var titles = $(getname);
 
       var obj = [];
-      var hi = {};
+      const hi = {};
 
       for (var i = 0; i < 5; i++) {
         json_Floor++;
@@ -72,54 +72,9 @@ function getData(url, method, getname) {
 
       }
 
-
-
-
-
-
-
-
       console.log("這裡是" + t);
 
-      for (var a = 0; a < allUrl.length; a++) {
-        hi[a] = Object.assign([t], a);
-      }
-
-
-
-
-
-
-
-
-
-
-
-
-      {
-        "三立": [
-            "時力提修憲修領土　他轟政治良心何在",
-      			"雙城論壇邀韓？柯文哲：好！我們會邀",
-      			"1505位政治受害者有罪判決遭撤銷",
-      			"攬館長聯盟？柯P讚：是厲害的企業家",
-      			"曲棍球恩怨情仇終了？段宜康道歉了"
-        ],
-        "華視" : [
-            "2018/12/07 20:52誰接台大校長? 林右昌點名張忠謀",
-            "2018/12/07 20:52輸2302票! 涂醒哲幕僚提選舉無效之訴",
-            "2018/12/07 20:02陳佩琪不在家 柯文哲上班遲到5分鐘",
-            "2018/12/07 20:00副手有望是女性? 韓國瑜:還在洽談",
-            "2018/12/07 19:58陳其邁咖啡會大爆滿 將改成音樂會"
-        ],
-      }
-
-
-
-
-
-
-
-
+        hi[t] = obj;
 
         peopleData.push(Object.assign([], obj));
 
@@ -127,6 +82,7 @@ function getData(url, method, getname) {
         fs.writeFileSync("result32.json", JSON.stringify({
           peopleData
         }));
+
         fs.writeFileSync("result.json", JSON.stringify({
           hi
         }));
@@ -143,8 +99,6 @@ function getData(url, method, getname) {
     switch (number) {
       case 1:
         getdata_name_haha = "自由時報";
-        console.log("已被判斷");
-        console.log("已 令 getdata_name_haha 為 自由時報");
         break;
       case 2:
         getdata_name_haha = "三立新聞";
