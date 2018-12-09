@@ -12,7 +12,7 @@ var allUrl = new Array(10); // 所有的鏈
 
 allUrl[1] = "https://www.setn.com/Catalog.aspx?PageGroupID=6"; //三立新聞
 allUrl[2] = "http://news.ltn.com.tw/list/breakingnews/politics"; //自由時報
-allUrl[3] = "https://theinitium.com/"; //端媒傳
+// allUrl[3] = "https://theinitium.com/"; //端媒傳
 allUrl[4] = "https://udn.com/news/cate/2/6638"; //聯合新聞
 allUrl[5] = "https://news.tvbs.com.tw/politics"; //tvbs
 allUrl[6] = "https://news.cts.com.tw/politics/"; //華視
@@ -30,28 +30,34 @@ getconition[6] = ".newslist-container p";
 getconition[7] = ".part_pictxt_3 h3";
 getconition[8] = ".list_style_none a";
 
+var obj = [];
+var hi = {};
+const finalResult = {}
+
 
 //=======================================================
 
 var json_Floor = 0; //暫存　json的位置
-var getdata_name_code = 1; //暫存 名子位置
+var getdata_name_code = 0; //暫存 名子位置
 
 var getdata_name_haha; //暫存 名子位置
 var peopleData = [];
-
+var name;
 var status_time = true; //狀態
 for (var x = 0; x < allUrl.length; x++) {
   if (allUrl[x] !== null) {
     getdata_name(getdata_name_code);
-    console.log("我抓到<" + getdata_name_haha);
-    getData(allUrl[x], "GET", getconition[x]);
+    getData(allUrl[x], "GET", getconition[x], getdata_name_haha);
     getdata_name_code++;
+
   }
 }
 
 
-function getData(url, method, getname) {
-  var t = getdata_name_haha;
+function getData(url, method, getname, name) {
+
+
+  // hi = obj;
   request({
     url: url,
     method: method
@@ -62,30 +68,41 @@ function getData(url, method, getname) {
     var $ = cheerio.load(b);
     var titles = $(getname);
 
-    var obj = {};
-    const hi = [];
-
     for (var i = 0; i < 5; i++) {
       json_Floor++;
-      obj.push($(titles[json_Floor]).text()); // 抓取每個標題
+      obj.push($(titles[i]).text()); // 抓取每個標題
+      hi[name] = obj;
 
+      // console.log(obj);
 
     }
+      obj =[];
+    console.log(name + "是我");
 
-    console.log("這裡是" + t);
+    // hi['三立'] = [obj];
 
-    hi[t] = obj;
+    // hi.push(name);
+    // hi["hi"] = obj;
+    // hi[name] = Object.assign(obj);
+
+
+    // 這邊看你要用迴圈還是什麼的弄好
+    // finalResult['三立'] = []
+    // 華視 ...
+
+    // finalResult['三立'].push('三立的新聞')
+    // 其它的...
 
     // peopleData.push(Object.assign([], obj));
-
+    fs.writeFileSync("result.json", JSON.stringify({
+      hi
+    }));
 
     fs.writeFileSync("result32.json", JSON.stringify({
       peopleData
     }));
 
-    fs.writeFileSync("result.json", JSON.stringify({
-      hi
-    }));
+
 
   });
 
@@ -95,7 +112,6 @@ function getData(url, method, getname) {
 
 function getdata_name(number) {
 
-  console.log(number);
   switch (number) {
     case 1:
       getdata_name_haha = "自由時報";
