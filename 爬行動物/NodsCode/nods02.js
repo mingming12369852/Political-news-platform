@@ -70,39 +70,15 @@ function getData(url, method, getname, name) {
 
     for (var i = 0; i < 5; i++) {
       json_Floor++;
-      obj.push($(titles[i]).text()); // 抓取每個標題
+      obj.push($(titles[i]).text().trim()); // 抓取每個標題
       hi[name] = obj;
 
-      // console.log(obj);
-
     }
-      obj =[];
-    console.log(name + "是我");
-
-    // hi['三立'] = [obj];
-
-    // hi.push(name);
-    // hi["hi"] = obj;
-    // hi[name] = Object.assign(obj);
-
-
-    // 這邊看你要用迴圈還是什麼的弄好
-    // finalResult['三立'] = []
-    // 華視 ...
-
-    // finalResult['三立'].push('三立的新聞')
-    // 其它的...
-
-    // peopleData.push(Object.assign([], obj));
-    fs.writeFileSync("result.json", JSON.stringify({
-      hi
-    }));
+    obj = [];
 
     fs.writeFileSync("result32.json", JSON.stringify({
-      peopleData
+      hi
     }));
-
-
 
   });
 
