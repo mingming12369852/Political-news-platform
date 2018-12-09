@@ -53,150 +53,148 @@ for (var x = 0; x < allUrl.length; x++) {
 function getData(url, method, getname) {
   var t = getdata_name_haha;
   request({
-      url: url,
-      method: method
-    }, function(e, r, b) {
-      if (e || !b) {
-        return;
-      }
-      var $ = cheerio.load(b);
-      var titles = $(getname);
+    url: url,
+    method: method
+  }, function(e, r, b) {
+    if (e || !b) {
+      return;
+    }
+    var $ = cheerio.load(b);
+    var titles = $(getname);
 
-      var obj = [];
-      const hi = {};
+    var obj = {};
+    const hi = [];
 
-      for (var i = 0; i < 5; i++) {
-        json_Floor++;
-        obj.push($(titles[json_Floor]).text()); // 抓取每個標題
-
-
-      }
-
-      console.log("這裡是" + t);
-
-        hi[t] = obj;
-
-        peopleData.push(Object.assign([], obj));
+    for (var i = 0; i < 5; i++) {
+      json_Floor++;
+      obj.push($(titles[json_Floor]).text()); // 抓取每個標題
 
 
-        fs.writeFileSync("result32.json", JSON.stringify({
-          peopleData
-        }));
-
-        fs.writeFileSync("result.json", JSON.stringify({
-          hi
-        }));
-
-      });
-
-
-  }
-
-
-  function getdata_name(number) {
-
-    console.log(number);
-    switch (number) {
-      case 1:
-        getdata_name_haha = "自由時報";
-        break;
-      case 2:
-        getdata_name_haha = "三立新聞";
-        break;
-      case 3:
-        getdata_name_haha = "端媒傳";
-        break;
-      case 4:
-        getdata_name_haha = "聯合新聞";
-        break;
-      case 5:
-        getdata_name_haha = "tvbs";
-        break;
-      case 6:
-        getdata_name_haha = "華視";
-        break;
-      case 7:
-        getdata_name_haha = "東森";
-        break;
-      case 8:
-        getdata_name_haha = "台視";
-        break;
-      case 9:
-        getdata_name_haha = "自由時報";
-        break;
-      default:
     }
 
+    console.log("這裡是" + t);
+
+    hi[t] = obj;
+
+    // peopleData.push(Object.assign([], obj));
+
+
+    fs.writeFileSync("result32.json", JSON.stringify({
+      peopleData
+    }));
+
+    fs.writeFileSync("result.json", JSON.stringify({
+      hi
+    }));
+
+  });
+
+
+}
+
+
+function getdata_name(number) {
+
+  console.log(number);
+  switch (number) {
+    case 1:
+      getdata_name_haha = "自由時報";
+      break;
+    case 2:
+      getdata_name_haha = "三立新聞";
+      break;
+    case 3:
+      getdata_name_haha = "端媒傳";
+      break;
+    case 4:
+      getdata_name_haha = "聯合新聞";
+      break;
+    case 5:
+      getdata_name_haha = "tvbs";
+      break;
+    case 6:
+      getdata_name_haha = "華視";
+      break;
+    case 7:
+      getdata_name_haha = "東森";
+      break;
+    case 8:
+      getdata_name_haha = "台視";
+      break;
+    case 9:
+      getdata_name_haha = "自由時報";
+      break;
+    default:
   }
 
-  // function getdata_name(number) {
-  //   switch (number) {
-  //     case 1:
-  //       getdata_name = "自由時報";
-  //       break;
-  //     case 2:
-  //       getdata_name = "三立新聞";
-  //       break;
-  //     case 3:
-  //       getdata_name = "端媒傳";
-  //       break;
-  //     case 4:
-  //       getdata_name = "聯合新聞";
-  //       break;
-  //     case 5:
-  //       getdata_name = "tvbs";
-  //       break;
-  //     case 6:
-  //       getdata_name = "華視";
-  //     break;
-  //     case 7:
-  //       getdata_name = "東森";
-  //     break;
-  //     case 8:
-  //       getdata_name = "台視";
-  //     break;
-  //     case 9:
-  //       getdata_name = "自由時報";
-  //       break;
-  //   }
-  //
-  // }
+}
 
-  //計時工具
+// function getdata_name(number) {
+//   switch (number) {
+//     case 1:
+//       getdata_name = "自由時報";
+//       break;
+//     case 2:
+//       getdata_name = "三立新聞";
+//       break;
+//     case 3:
+//       getdata_name = "端媒傳";
+//       break;
+//     case 4:
+//       getdata_name = "聯合新聞";
+//       break;
+//     case 5:
+//       getdata_name = "tvbs";
+//       break;
+//     case 6:
+//       getdata_name = "華視";
+//     break;
+//     case 7:
+//       getdata_name = "東森";
+//     break;
+//     case 8:
+//       getdata_name = "台視";
+//     break;
+//     case 9:
+//       getdata_name = "自由時報";
+//       break;
+//   }
+//
+// }
 
-
-  /*
-  ０ 名視                      ０ null
-  １ 三立                      １ $ ('.newsimg-area-text-2');
-  ２ 自由時報                  ２ $('.list p');
-  ３ 風媒端                    ３ $('.c-digest-headline');
-  ４ 聯合                      ４ $('.listing h2')
-  ５ TVBS                     ５ $('.txt masterVision_box_img');
-  ６ 華視                     ６ $('.newstitle');
-  ７ 東森                     ７  $('.two_col h3')
-  ８ 台視                     ８ $('.list_style_none a')
-  */
+//計時工具
 
 
-  /*
-  長
+/*
+０ 名視                      ０ null
+１ 三立                      １ $ ('.newsimg-area-text-2');
+２ 自由時報                  ２ $('.list p');
+３ 風媒端                    ３ $('.c-digest-headline');
+４ 聯合                      ４ $('.listing h2')
+５ TVBS                     ５ $('.txt masterVision_box_img');
+６ 華視                     ６ $('.newstitle');
+７ 東森                     ７  $('.two_col h3')
+８ 台視                     ８ $('.list_style_none a')
+*/
 
-  var data =
-  {
-    中天 :
-    {
-      標題:"",
-      時間:"",
-      連結:"",
 
-    },
-    台視 :
-    {
-      標題:"",
-      時間:"",
-      連結:"",
-    }
+/*
+長
 
-  }
+var data =
+{
+  中天 :
+  [
+  標題:"",
+  標題:""
+  ],
 
-  */
+  台視 :
+  [
+    標題:"",
+    標題:""
+  ]
+
+}
+
+*/
