@@ -2,23 +2,16 @@ var request = require("request");
 var cheerio = require("cheerio");
 var fs = require("fs");
 
-var Today = new Date();
-var date = Today.getDate();
-var setDat = (Today.getFullYear() + "" + (Today.getMonth() + 1) + "" + date);
-if (date < 10) {
-  date = "0" + date;
-}
 var allUrl = new Array(10); // 所有的鏈
 
 allUrl[1] = "https://www.setn.com/Catalog.aspx?PageGroupID=6"; //三立新聞
 allUrl[2] = "http://news.ltn.com.tw/list/breakingnews/politics"; //自由時報
-// allUrl[3] = "https://theinitium.com/"; //端媒傳
+allUrl[3] = "https://theinitium.com/"; //端媒傳
 allUrl[4] = "https://udn.com/news/cate/2/6638"; //聯合新聞
 allUrl[5] = "https://news.tvbs.com.tw/politics"; //tvbs
 allUrl[6] = "https://news.cts.com.tw/politics/"; //華視
 allUrl[7] = "https://www.ettoday.net/news/focus/%E6%94%BF%E6%B2%BB/"; //東森
 allUrl[8] = "https://www.ttv.com.tw/news/catlist/A"; //台視
-
 
 var getconition = new Array(10); //文字中的條件
 getconition[1] = ".newsimg-area-text-2";
@@ -55,9 +48,6 @@ for (var x = 0; x < allUrl.length; x++) {
 
 
 function getData(url, method, getname, name) {
-
-
-  // hi = obj;
   request({
     url: url,
     method: method
@@ -75,14 +65,11 @@ function getData(url, method, getname, name) {
 
     }
     obj = [];
-
     fs.writeFileSync("result32.json", JSON.stringify({
       hi
     }));
 
   });
-
-
 }
 
 
@@ -120,73 +107,3 @@ function getdata_name(number) {
   }
 
 }
-
-// function getdata_name(number) {
-//   switch (number) {
-//     case 1:
-//       getdata_name = "自由時報";
-//       break;
-//     case 2:
-//       getdata_name = "三立新聞";
-//       break;
-//     case 3:
-//       getdata_name = "端媒傳";
-//       break;
-//     case 4:
-//       getdata_name = "聯合新聞";
-//       break;
-//     case 5:
-//       getdata_name = "tvbs";
-//       break;
-//     case 6:
-//       getdata_name = "華視";
-//     break;
-//     case 7:
-//       getdata_name = "東森";
-//     break;
-//     case 8:
-//       getdata_name = "台視";
-//     break;
-//     case 9:
-//       getdata_name = "自由時報";
-//       break;
-//   }
-//
-// }
-
-//計時工具
-
-
-/*
-０ 名視                      ０ null
-１ 三立                      １ $ ('.newsimg-area-text-2');
-２ 自由時報                  ２ $('.list p');
-３ 風媒端                    ３ $('.c-digest-headline');
-４ 聯合                      ４ $('.listing h2')
-５ TVBS                     ５ $('.txt masterVision_box_img');
-６ 華視                     ６ $('.newstitle');
-７ 東森                     ７  $('.two_col h3')
-８ 台視                     ８ $('.list_style_none a')
-*/
-
-
-/*
-長
-
-var data =
-{
-  中天 :
-  [
-  標題:"",
-  標題:""
-  ],
-
-  台視 :
-  [
-    標題:"",
-    標題:""
-  ]
-
-}
-
-*/

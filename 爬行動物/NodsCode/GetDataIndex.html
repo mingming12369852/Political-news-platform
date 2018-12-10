@@ -7,6 +7,8 @@
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
   </style>
   <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+
+  </script>
   <!-- WEB.css -->
   <style src="text/css">
     #top {
@@ -64,26 +66,54 @@
   </script>
   <!-- 抓取本地 .json 打印到hmtl 頁面上。 -->
   <script type="text/javascript">
-    var Liberty_Times = "http://127.0.0.1/html_/js/爬行動物/NodsCode/result.json";
-    var request = new XMLHttpRequest();
+    var Liberty_Times = "http://127.0.0.1/html_/js/%E7%88%AC%E8%A1%8C%E5%8B%95%E7%89%A9/NodsCode/result32.json";
 
+    var request = new XMLHttpRequest();
+    var e = [];
+    var f = [];
     request.open('GET', Liberty_Times);
-    request.responseType = ' json';
+    request.responseType = 'json';
     request.send();
 
-    request.onload = function() {
-      var superHerose = request.response;
-      populeateHeader(superHerose);
-    }
+    // request.onload = function() {
+    //   var superHerose = request.response;
+    //   populeateHeader(superHerose);
+    // }
+    // function populeateHeader(jsonObj) {
+    //   var myH1 = document.createElement('p');
+    //   var br = document.createElement("br");
+    //   for (var i = 0; i < jsonObj.length; i++) {
+    //     if (jsonObj[i] = "自由時報 ")
+    //       myH1.innerText += jsonObj[i] + "\n";
+    //
+    //     // document.getElementById('text').append(myH1);;
+    //   }
+    // }
 
-    function populeateHeader(jsonObj) {
-      var myH1 = document.createElement('p');
-      var br = document.createElement("br");
-      for (var i = 0; i < jsonObj.length; i++) {
-        myH1.innerText += jsonObj[i] + "\n";
 
-        document.getElementById('text').append(myH1);;
-      }
+    function getData_(name) {
+
+      $.getJSON(Liberty_Times, function(d) {
+        console.log(d['hi'].三立新聞);
+        // e['hi'].三立新聞;
+        for (var i = 0; i < 5; i++) {
+          e += d['hi'].三立新聞[i] + '</br>' + '</br>';
+          f += d['hi'].東森[i] + '</br>' + '</br>';
+        }
+        document.getElementById("3le").innerHTML = e;
+        document.getElementById("EBC").innerHTML = f;
+        /*
+        三立新聞
+        自由時報
+        東森
+        華視
+        台視
+        聯合新聞
+        tvbs
+        */
+
+      });
+      console.log(e);
     }
   </script>
 
@@ -92,7 +122,8 @@
 </head>
 
 <body>
-
+  <p></p>
+  <button onclick="getData_()"></button>
   <!-- 首頁選單 -->
   <div id="faler-body">
     <div id="mid">
@@ -106,6 +137,7 @@
     </div>
   </div>
 
+  <p id="text"></p>
   <!-- 標題 -->
   <div id="top">
     <h1>新聞集資平台。</h1>
@@ -116,7 +148,7 @@
   <!-- 政治光譜-->
   <ul class="nav justify-content-center" id="index-top">
     <li class="nav-item">
-      <a href="#" class="nav-link active">民視</a>
+      <a href="#" class="nav-link active" onclick="getData()">民視</a>
     </li>
 
     <li class="nav-item">
@@ -169,10 +201,12 @@
 
       <div class="col">
         三立
+        <p id="3le"></p>
       </div>
 
       <div class="col">
         年代
+        <p id=""></p>
       </div>
 
       <div class="col">
@@ -205,6 +239,7 @@
       </div>
       <div class="col">
         東森
+        <p id="EBC"></p>
       </div>
       <div class="col">
         中天
