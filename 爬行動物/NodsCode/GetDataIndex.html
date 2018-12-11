@@ -70,7 +70,6 @@
 
     var request = new XMLHttpRequest();
     var e = [];
-    var f = [];
     request.open('GET', Liberty_Times);
     request.responseType = 'json';
     request.send();
@@ -97,20 +96,37 @@
         console.log(d['hi'].三立新聞);
         // e['hi'].三立新聞;
         for (var i = 0; i < 5; i++) {
-          e += d['hi'].三立新聞[i] + '</br>' + '</br>';
-          f += d['hi'].東森[i] + '</br>' + '</br>';
+
+          e[1] += d['hi'].自由時報[i] + '</br>' + '</br>';
+          e[2] += d['hi'].東森[i] + '</br>' + '</br>';
+          e[3] += d['hi'].三立新聞[i] + '</br>' + '</br>';
+          e[4] += d['hi'].華視[i] + '</br>' + '</br>';
+          e[5] += d['hi'].台視[i] + '</br>' + '</br>';
+          e[6] += d['hi'].tvbs[i] + '</br>' + '</br>';
+          e[7] += d['hi'].聯合新聞[i] + '</br>' + '</br>';
+          e[8] += d['hi'].端媒傳[i] + '</br>' + '</br>';
+
         }
-        document.getElementById("3le").innerHTML = e;
-        document.getElementById("EBC").innerHTML = f;
-        /*
-        三立新聞
-        自由時報
-        東森
-        華視
-        台視
-        聯合新聞
-        tvbs
-        */
+
+        document.getElementById("Freetime").innerHTML = e[1];
+        document.getElementById("Dongsen").innerHTML = e[2];
+        document.getElementById("SanliNews").innerHTML = e[3];
+        document.getElementById("Huashi").innerHTML = e[4];
+        document.getElementById("Taiwan").innerHTML = e[5]; //沒有
+        document.getElementById("tvbs").innerHTML = e[6];
+        document.getElementById("Jointnews").innerHTML = e[7];
+        document.getElementById("Theinitium").innerHTML = e[8];
+        console.log(e[8]);
+
+
+        // 自由時報
+        // 東森
+        // 三立新聞
+        // 華視
+        // 台視
+        // tvbs
+        // 聯合新聞
+        // 端媒傳
 
       });
       console.log(e);
@@ -201,7 +217,7 @@
 
       <div class="col">
         三立
-        <p id="3le"></p>
+        <p id="SanliNews"></p>
       </div>
 
       <div class="col">
@@ -211,7 +227,7 @@
 
       <div class="col">
         自由時報
-        <p id="text"></p>
+        <p id="Freetime"></p>
       </div>
 
     </div>
@@ -221,11 +237,11 @@
 
       <div class="col">
         風端媒
-        <p>dddddddddddddddddddddddddddddddddd</p>
+        <p id="Theinitium"></p>
       </div>
       <div class="col">
         聯合
-        <p>dddddddddddddddddddddddddddddddddd</p>
+        <p id="Jointnews"></p>
       </div>
     </div>
 
@@ -233,16 +249,19 @@
     <div class="row" id="Blue">
       <div class="col">
         TVBS
+        <p id="tvbs"></p>
       </div>
       <div class="col">
         華視
+        <p id="Huashi"></p>
       </div>
       <div class="col">
         東森
-        <p id="EBC"></p>
+        <p id="Dongsen"></p>
       </div>
       <div class="col">
-        中天
+        台視
+        <p id="Taiwan"></p>
       </div>
     </div>
 

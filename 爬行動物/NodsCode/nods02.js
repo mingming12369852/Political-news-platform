@@ -77,10 +77,10 @@ function getdata_name(number) {
 
   switch (number) {
     case 1:
-      getdata_name_haha = "自由時報";
+      getdata_name_haha = "三立新聞";
       break;
     case 2:
-      getdata_name_haha = "三立新聞";
+      getdata_name_haha = "自由時報";
       break;
     case 3:
       getdata_name_haha = "端媒傳";
