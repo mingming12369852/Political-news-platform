@@ -23,6 +23,9 @@ getconition[6] = ".newslist-container p";
 getconition[7] = ".part_pictxt_3 h3";
 getconition[8] = ".list_style_none a";
 
+var getIMG = new Array(10);
+getIMG[1] = ".lazy"
+
 var obj = [];
 var hi = {};
 const finalResult = {}

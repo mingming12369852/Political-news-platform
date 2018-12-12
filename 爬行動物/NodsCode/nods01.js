@@ -2,7 +2,7 @@ var request = require("request");
 var cheerio = require("cheerio");
 var fs = require("fs");
 
-var freeUrl = "https://udn.com/news/cate/2/6638";
+var freeUrl = "https://www.setn.com/Catalog.aspx?PageGroupID=6";
 
 var result = []; //自由時報
 
@@ -14,11 +14,13 @@ request({
     return;
   }
   var $ = cheerio.load(b);
-  var titles = $('.listing h2');
+  var titles = $('.lazy').attr("src");
+  // var img = $('.lazy').attr("src");
 
 
-  for (var i = 0; i < titles.length; i++) {
-    result.push($(titles[i]).text());
+  for (var i = 0; i < 5; i++) {
+    result.push($(titles[i]).text() );
+    // result.push( $(img[i].text() ) );
   }
 
   fs.writeFileSync("result.json", JSON.stringify(result));
