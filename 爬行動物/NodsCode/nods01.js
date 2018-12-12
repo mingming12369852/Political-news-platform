@@ -14,12 +14,12 @@ request({
     return;
   }
   var $ = cheerio.load(b);
-  var titles = $('.lazy').attr("src");
-  // var img = $('.lazy').attr("src");
+  var titles = $('.lazy');
+  // var img = $('.lazy').attr('src');
 
 
-  for (var i = 0; i < 5; i++) {
-    result.push($(titles[i]).text() );
+  for (var i = 0; i < titles.length; i++) {
+    result.push($(titles[i]).attr('data-original'));
     // result.push( $(img[i].text() ) );
   }
 
