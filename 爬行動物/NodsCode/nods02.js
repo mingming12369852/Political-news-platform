@@ -24,9 +24,11 @@ getconition[7] = ".part_pictxt_3 h3";
 getconition[8] = ".list_style_none a";
 
 var getIMG = new Array(10);
-getIMG[1] = ".lazy"
+getIMG[1] = ".lazy";
+getIMG[6] = ".lazy";
 
 var obj = [];
+var objimg = [];
 var hi = {};
 const finalResult = {}
 
@@ -43,14 +45,14 @@ var status_time = true; //狀態
 for (var x = 0; x < allUrl.length; x++) {
   if (allUrl[x] !== null) {
     getdata_name(getdata_name_code);
-    getData(allUrl[x], "GET", getconition[x], getdata_name_haha);
+    getData(allUrl[x], "GET", getconition[x], getdata_name_haha, getIMG[x]);
     getdata_name_code++;
-
   }
 }
 
 
-function getData(url, method, getname, name) {
+function getData(url, method, getname, name, img) {
+  console.log(img);
   request({
     url: url,
     method: method
@@ -60,14 +62,20 @@ function getData(url, method, getname, name) {
     }
     var $ = cheerio.load(b);
     var titles = $(getname);
+    var getimg_ = $(img);
 
     for (var i = 0; i < 5; i++) {
       json_Floor++;
-      obj.push($(titles[i]).text().trim()); // 抓取每個標題
-      hi[name] = obj;
+      obj.push($(titles[i]).text().trim()); //抓取每個標題
+      objimg.push($(getimg_[i]).attr('data-original'));
 
+
+      hi[name] = obj;
+      hi[name+"img"] = objimg;
     }
+
     obj = [];
+    objimg = [];
     fs.writeFileSync("result32.json", JSON.stringify({
       hi
     }));
