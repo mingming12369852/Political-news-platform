@@ -2,7 +2,7 @@ var request = require("request");
 var cheerio = require("cheerio");
 var fs = require("fs");
 
-var freeUrl = "https://www.setn.com/Catalog.aspx?PageGroupID=6";
+var freeUrl = "https://news.cts.com.tw/politics/";
 
 var result = []; //自由時報
 

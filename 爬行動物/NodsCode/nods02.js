@@ -25,7 +25,17 @@ getconition[8] = ".list_style_none a";
 
 var getIMG = new Array(10);
 getIMG[1] = ".lazy";
-getIMG[6] = ".lazy";
+getIMG[5] = ".lazyimage";
+getIMG[6] = ".newsimg-thumb img";
+
+var getIMGconition = new Array(10);
+getIMGconition[1] = "data-original";
+getIMGconition[5] = "data-original";
+getIMGconition[6] = "src";
+
+
+
+
 
 var obj = [];
 var objimg = [];
@@ -45,13 +55,13 @@ var status_time = true; //狀態
 for (var x = 0; x < allUrl.length; x++) {
   if (allUrl[x] !== null) {
     getdata_name(getdata_name_code);
-    getData(allUrl[x], "GET", getconition[x], getdata_name_haha, getIMG[x]);
+    getData(allUrl[x], "GET", getconition[x], getdata_name_haha, getIMG[x], getIMGconition[x]);
     getdata_name_code++;
   }
 }
 
 
-function getData(url, method, getname, name, img) {
+function getData(url, method, getname, name, img, imgconition) {
   console.log(img);
   request({
     url: url,
@@ -67,11 +77,11 @@ function getData(url, method, getname, name, img) {
     for (var i = 0; i < 5; i++) {
       json_Floor++;
       obj.push($(titles[i]).text().trim()); //抓取每個標題
-      objimg.push($(getimg_[i]).attr('data-original'));
+      objimg.push($(getimg_[i]).attr(imgconition));
 
 
       hi[name] = obj;
-      hi[name+"img"] = objimg;
+      hi[name + "img"] = objimg;
     }
 
     obj = [];
