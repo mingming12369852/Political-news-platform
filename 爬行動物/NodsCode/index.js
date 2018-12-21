@@ -3,6 +3,14 @@ const request = require("request");
 const cheerio = require("cheerio");
 const fs = require("fs");
 
+
+
+
+
+//KHA VWIESF SFV WDKS SJW QGMJ XJAWFVK
+///qPY8LGVWQ-K
+
+//  YOUTUDOTBEEACKSLASH
 const earthquake = function () {
   request({
     url: "http://www.cwb.gov.tw/V7/modules/MOD_EC_Home.htm", // 中央氣象局網頁

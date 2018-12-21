@@ -25,15 +25,15 @@ getconition[8] = ".list_style_none a";
 
 var getIMG = new Array(10);
 getIMG[1] = ".lazy";
+getIMG[2] = ".list img";
 getIMG[5] = ".lazyimage";
 getIMG[6] = ".newsimg-thumb img";
 
 var getIMGconition = new Array(10);
 getIMGconition[1] = "data-original";
+getIMGconition[2] = "src";
 getIMGconition[5] = "data-original";
 getIMGconition[6] = "src";
-
-
 
 
 
