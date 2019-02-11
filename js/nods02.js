@@ -12,8 +12,9 @@ allUrl[5] = "https://news.tvbs.com.tw/politics"; //tvbs
 allUrl[6] = "https://news.cts.com.tw/politics/"; //華視
 allUrl[7] = "https://www.ettoday.net/news/focus/%E6%94%BF%E6%B2%BB/"; //東森
 allUrl[8] = "https://www.ttv.com.tw/news/catlist/A"; //台視
+// allUrl[9] = "https://www.ftvnews.com.tw/news/popnews"//民視
 
-var getconition = new Array(10); //文字中的條件
+var getconition = new Array(10); //文字中的條件 .class title
 getconition[1] = ".newsimg-area-text-2";
 getconition[2] = ".list p";
 getconition[3] = ".c-digest-lead";
@@ -22,12 +23,14 @@ getconition[5] = ".content_center_contxt_real_news h2";
 getconition[6] = ".newslist-container p";
 getconition[7] = ".part_pictxt_3 h3";
 getconition[8] = ".list_style_none a";
+// getconition[9] = ".title";
 
-var getIMG = new Array(10);
+var getIMG = new Array(10);//圖片中的條件 .class
 getIMG[1] = ".lazy";
 getIMG[2] = ".list img";
 getIMG[5] = ".lazyimage";
 getIMG[6] = ".newsimg-thumb img";
+getIMG[7] = ".pic img"
 
 var getIMGconition = new Array(10);
 getIMGconition[1] = "data-original";
@@ -52,6 +55,7 @@ var getdata_name_haha; //暫存 名子位置
 var peopleData = [];
 var name;
 var status_time = true; //狀態
+
 for (var x = 0; x < allUrl.length; x++) {
   if (allUrl[x] !== null) {
     getdata_name(getdata_name_code);
@@ -86,7 +90,7 @@ function getData(url, method, getname, name, img, imgconition) {
 
     obj = [];
     objimg = [];
-    fs.writeFileSync("result32.json", JSON.stringify({
+    fs.writeFileSync("json/result33.json", JSON.stringify({
       hi
     }));
 

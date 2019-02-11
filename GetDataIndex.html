@@ -71,7 +71,7 @@
   </script>
   <!-- 抓取本地 .json 打印到hmtl 頁面上。 -->
   <script type="text/javascript">
-    var Liberty_Times = "http://127.0.0.1/html_/js/%E7%88%AC%E8%A1%8C%E5%8B%95%E7%89%A9/NodsCode/result32.json";
+    var Liberty_Times = "http://127.0.0.1/html_/Political-news-platform/js/json/result33.json";
 
     var request = new XMLHttpRequest();
     var e = [];
@@ -102,14 +102,14 @@
         e = d;
       });
 
-      for (var i = 0; i < 5; i++) {
+      for (var i = 0; i < 6; i++) {
         $("#SanliNews").append("<img  src=" + e['hi'].三立新聞img[i] + ">" + "<p>" + e['hi'].三立新聞[i] + "<p>" + "<td>");
         $("#Huashi").append("<img src=" + e['hi'].華視img[i] + ">" + "<p>" + e['hi'].華視[i] + "<p>" + "<td>");
         $("#Dongsen").append("<img src=" + e['hi'].東森img[i] + ">" + "<p>" + e['hi'].東森[i] + "<p>" + "<td>");
         $("#Freetime").append("<img src=" + e['hi'].自由時報img[i] + ">" + "<p>" + e['hi'].自由時報[i] + "<p>" + "<td>");
         $("#tvbs").append("<img src=" + e['hi'].tvbsimg[i] + ">" + "<p>" + e['hi'].tvbs[i] + "<p>" + "<td>");
         $("#Taiwan").append("<img " + "src=" + e['hi'].台視img[i] + ">" + "<p>" + e['hi'].台視[i] + "<p>" + "<td>").attr('class', "img-thumbnail");
-
+        // $("#Ftvnews").append("<img " + "src=" + e['hi'].民視img[i] + ">" + "<p>" + e['hi'].民視[i] + "<p>" + "<td>").attr('class', "img-thumbnail");
       }
 
     }
@@ -193,7 +193,7 @@
     <!-- 綠色底子 -->
     <div class="row" id="Green">
 
-      <div class="col">
+      <div class="col" id="Ftvnews">
         民視
       </div>
 
@@ -250,6 +250,5 @@
 
   hi
 </body>
-<a href="http://www.free-counter.jp/"><img src="https://www.f-counter.net/j/31/1545646818/" alt="アクセスカウンター"></a>
 
 </html>
