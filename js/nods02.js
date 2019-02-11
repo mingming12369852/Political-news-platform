@@ -1,6 +1,7 @@
 var request = require("request");
 var cheerio = require("cheerio");
 var fs = require("fs");
+const delay = require('delay');
 
 var allUrl = new Array(10); // 所有的鏈
 
@@ -30,13 +31,14 @@ getIMG[1] = ".lazy";
 getIMG[2] = ".list img";
 getIMG[5] = ".lazyimage";
 getIMG[6] = ".newsimg-thumb img";
-getIMG[7] = ".pic img"
+getIMG[7] = ".part_pictxt_3 img"
 
 var getIMGconition = new Array(10);
 getIMGconition[1] = "data-original";
 getIMGconition[2] = "src";
 getIMGconition[5] = "data-original";
 getIMGconition[6] = "src";
+getIMGconition[7] = "src";
 
 
 
@@ -81,7 +83,7 @@ function getData(url, method, getname, name, img, imgconition) {
     for (var i = 0; i < 5; i++) {
       json_Floor++;
       obj.push($(titles[i]).text().trim()); //抓取每個標題
-      objimg.push($(getimg_[i]).attr(imgconition));
+      objimg.push($(getimg_[i]).attr(imgconition));//抓取每個照片
 
 
       hi[name] = obj;
