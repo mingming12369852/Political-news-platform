@@ -13,7 +13,7 @@ allUrl[5] = "https://news.tvbs.com.tw/politics"; //tvbs
 allUrl[6] = "https://news.cts.com.tw/politics/"; //華視
 allUrl[7] = "https://www.ettoday.net/news/focus/%E6%94%BF%E6%B2%BB/"; //東森
 allUrl[8] = "https://www.ttv.com.tw/news/catlist/A"; //台視
-// allUrl[9] = "https://www.ftvnews.com.tw/news/popnews"//民視
+allUrl[9] = "http://eranews.eracom.com.tw/files/item/xml/news_1.xml"//年代
 
 var getconition = new Array(10); //文字中的條件 .class title
 getconition[1] = ".newsimg-area-text-2";
@@ -24,7 +24,7 @@ getconition[5] = ".content_center_contxt_real_news h2";
 getconition[6] = ".newslist-container p";
 getconition[7] = ".part_pictxt_3 h3";
 getconition[8] = ".list_style_none a";
-// getconition[9] = ".title";
+getconition[9] = "a[target^='_parent'] span";
 
 var getIMG = new Array(10);//圖片中的條件 .class
 getIMG[1] = ".lazy";
@@ -128,7 +128,7 @@ function getdata_name(number) {
       getdata_name_haha = "台視";
       break;
     case 9:
-      getdata_name_haha = "自由時報";
+      getdata_name_haha = "年代";
       break;
     default:
   }
