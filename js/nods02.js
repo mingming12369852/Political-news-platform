@@ -13,9 +13,10 @@ allUrl[5] = "https://news.tvbs.com.tw/politics"; //tvbs
 allUrl[6] = "https://news.cts.com.tw/politics/"; //華視
 allUrl[7] = "https://www.ettoday.net/news/focus/%E6%94%BF%E6%B2%BB/"; //東森
 allUrl[8] = "https://www.ttv.com.tw/news/catlist/A"; //台視
-allUrl[9] = "http://eranews.eracom.com.tw/files/item/xml/news_1.xml"//年代
+allUrl[9] = "http://gotv.ctitv.com.tw/category/politics-news"//中天
 
 var getconition = new Array(10); //文字中的條件 .class title
+
 getconition[1] = ".newsimg-area-text-2";
 getconition[2] = ".list p";
 getconition[3] = ".c-digest-lead";
@@ -24,15 +25,17 @@ getconition[5] = ".content_center_contxt_real_news h2";
 getconition[6] = ".newslist-container p";
 getconition[7] = ".part_pictxt_3 h3";
 getconition[8] = ".list_style_none a";
-getconition[9] = "a[target^='_parent'] span";
+getconition[9] = ".post-title a";
 
 var getIMG = new Array(10);//圖片中的條件 .class
+//未完成
 getIMG[1] = ".lazy";
 getIMG[2] = ".list img";
 getIMG[5] = ".lazyimage";
 getIMG[6] = ".newsimg-thumb img";
-getIMG[7] = ".part_pictxt_3 img"
-
+getIMG[7] = ".part_pictxt_3 img";
+getIMG[9] = ".img src";
+//未完成
 var getIMGconition = new Array(10);
 getIMGconition[1] = "data-original";
 getIMGconition[2] = "src";
@@ -44,7 +47,7 @@ getIMGconition[7] = "src";
 
 var obj = [];
 var objimg = [];
-var hi = {};
+var all = {};
 const finalResult = {}
 
 
@@ -86,14 +89,14 @@ function getData(url, method, getname, name, img, imgconition) {
       objimg.push($(getimg_[i]).attr(imgconition));//抓取每個照片
 
 
-      hi[name] = obj;
-      hi[name + "img"] = objimg;
+      all[name] = obj;
+      all[name + "img"] = objimg;
     }
 
     obj = [];
     objimg = [];
-    fs.writeFileSync("json/result33.json", JSON.stringify({
-      hi
+    fs.writeFileSync("json/Data01.json", JSON.stringify({
+      all
     }));
 
   });
@@ -128,7 +131,7 @@ function getdata_name(number) {
       getdata_name_haha = "台視";
       break;
     case 9:
-      getdata_name_haha = "年代";
+      getdata_name_haha = "中天";
       break;
     default:
   }
