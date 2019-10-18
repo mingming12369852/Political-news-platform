@@ -9,9 +9,6 @@ const server = http.createServer((req, res) => {
   res.setHeader("Content-Type", "text/plain");
   console.log("HI");
 
-  exports.myDateTime = function() {
-    return Date();
-  };
 
   res.end(heelo);
 });

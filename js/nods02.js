@@ -2,7 +2,35 @@ var request = require("request");
 var cheerio = require("cheerio");
 var fs = require("fs");
 const delay = require('delay');
+const http = require("http");
 
+
+var date ;
+function startServer () {
+
+  //=================================================server MOD
+  const hostname = "127.0.0.1";
+  const port = process.env.PORT || 5000;
+
+  const server = http.createServer((req, res) => {
+    res.statusCode = 200;
+    res.setHeader("Content-Type", "application/json; charset=utf-8");
+    console.log("HI");
+
+  // res.write();
+  console.log(date);
+    res.end( JSON.stringify(date,"utf-8") );
+  });
+
+  server.listen(port, hostname, () => {
+    console.log(`Server running at http://${hostname}:${port}/`);
+  });
+
+  server.listen(port);
+  //=================================================
+}
+
+var all = {};
 var allUrl = new Array(10); // 所有的鏈
 
 allUrl[1] = "https://www.setn.com/Catalog.aspx?PageGroupID=6"; //三立新聞
@@ -49,7 +77,6 @@ var obj = [];
 var objimg = [];
 var all = {};
 const finalResult = {}
-
 
 //=======================================================
 
@@ -98,11 +125,10 @@ function getData(url, method, getname, name, img, imgconition) {
     fs.writeFileSync("js/json/Data01.json", JSON.stringify({
       all
     }));
-
+date = all;
+console.log(date);
   });
 }
-
-
 function getdata_name(number) {
 
   switch (number) {
@@ -137,3 +163,6 @@ function getdata_name(number) {
   }
 
 }
+console.log(date);
+
+startServer();
