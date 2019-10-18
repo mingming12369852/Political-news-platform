@@ -7,11 +7,12 @@ const port = process.env.PORT || 5000;
 const server = http.createServer((req, res) => {
   res.statusCode = 200;
   res.setHeader("Content-Type", "text/plain");
-  res.end("Hello World\n");
+  console.log("HI");
+  res.end("Hello World\n why>");
 });
 
 server.listen(port, hostname, () => {
   console.log(`Server running at http://${hostname}:${port}/`);
 });
-console.log("wwww");
+
 server.listen(port);

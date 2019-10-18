@@ -95,7 +95,7 @@ function getData(url, method, getname, name, img, imgconition) {
 
     obj = [];
     objimg = [];
-    fs.writeFileSync("json/Data01.json", JSON.stringify({
+    fs.writeFileSync("js/json/Data01.json", JSON.stringify({
       all
     }));
 
