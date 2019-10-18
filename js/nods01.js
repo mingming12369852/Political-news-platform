@@ -1,3 +1,4 @@
+const PORT = process.env.PORT;
 var request = require("request");
 var cheerio = require("cheerio");
 var fs = require("fs");
@@ -5,7 +6,7 @@ var fs = require("fs");
 var freeUrl = "http://eranews.eracom.com.tw/files/item/xml/news_1.xml";
 
 var result = []; //自由時報
-
+console.log("wwww");
 request({
   url: freeUrl,
   method: "GET"
@@ -28,7 +29,7 @@ request({
   fs.writeFileSync("result.json", JSON.stringify(result));
 });
 
-
+server.listen(PORT);
 
 
 // var request = require("request");
