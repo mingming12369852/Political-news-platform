@@ -1,4 +1,3 @@
-
 const http = require("http");
 
 const hostname = "127.0.0.1";
@@ -8,6 +7,11 @@ const server = http.createServer((req, res) => {
   res.statusCode = 200;
   res.setHeader("Content-Type", "text/plain");
   console.log("HI");
+
+  exports.myDateTime = function() {
+    return Date();
+  };
+  
   res.end("Hello World\n why>");
 });
 
