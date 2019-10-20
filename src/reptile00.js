@@ -64,7 +64,8 @@ getIMG[4] = ".ratio-container >img";
 getIMG[5] = ".lazyimage";
 getIMG[6] = ".newsimg-thumb img";
 getIMG[7] = ".part_pictxt_3 img";
-getIMG[9] = ".img src";
+getIMG[8] = ".logo";
+getIMG[9] = ".img > img";
 
 //未完成 img屬性
 var getIMGconition = new Array(10);
@@ -74,6 +75,8 @@ getIMGconition[4] = "data-src";
 getIMGconition[5] = "data-original";
 getIMGconition[6] = "src";
 getIMGconition[7] = "src";
+getIMGconition[8] = "src";
+getIMGconition[9] = "src";
 
 
 
