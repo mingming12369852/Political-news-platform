@@ -4,7 +4,7 @@
   "description": "<br> <br><h2>這個企劃是：</h2>     經由上一次，大家投票的結果。我認為仍舊有大多數人，可能只關注藍色綠色。     無視了無色黨派。     加上只聽一方面的標題 就胡亂下標題的     導致兩派分裂，各種導致各種錯誤資訊在網路上流動著。     這裡     統整所有 有關\"政治\"的新聞從 深藍、中立、深綠 每一家的標題整理都列出來。",
   "main": "index.js",
   "scripts": {
-    "start":"node js/nods02.js",
+    "start":"node src/nods02.js",
     "test": "echo \"Error: no test specified\" && exit 1 ,"
   },
   "repository": {

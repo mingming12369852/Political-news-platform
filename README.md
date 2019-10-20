@@ -30,8 +30,16 @@
 <br>
 <br>
 <h2>How to User：</h2><br>
-    cd .../js<br>
-    node nods02.js<br>
-    Data to .../json/Data01.json<br>
+    open CMD
+    >>cd /Political-news-platform
+    >> node nods02.js<br>
 
-測試git
+    Data to .../build/Data01.json<br>
+
+    or <br>
+
+    https://nodereptile1.herokuapp.com/
+    or u can go to this
+
+拿到資料
+當前版本v1.3a
