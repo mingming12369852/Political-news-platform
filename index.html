@@ -71,7 +71,7 @@
   </script>
   <!-- 抓取本地 .json 打印到hmtl 頁面上。 -->
   <script type="text/javascript">
-    var Liberty_Times = "http://127.0.0.1/html_/Political-news-platform/js/json/Data01.json";
+    var Liberty_Times = "http://127.0.0.1/Political-news-platform/build/Data02.json";
 
     var request = new XMLHttpRequest();
     var e = [];
@@ -102,7 +102,7 @@
         e = d;
       });
 
-      for (var i = 0; i < 6; i++) {
+      for (var i = 0; i < 5; i++) {
         $("#SanliNews").append("<img  src=" + e['all'].三立新聞img[i] + ">" + "<p>" + e['all'].三立新聞[i] + "<p>" + "<td>");
         $("#Huashi").append("<img src=" + e['all'].華視img[i] + ">" + "<p>" + e['all'].華視[i] + "<p>" + "<td>");
         $("#Dongsen").append("<img src=" + e['all'].東森img[i] + ">" + "<p>" + e['all'].東森[i] + "<p>" + "<td>");
@@ -167,7 +167,7 @@
     </li>
 
     <li class="nav-item">
-      <a href="#" class="nav-link">聯合新聞</a>
+      <a href="#" class="nav-link">聯合</a>
     </li>
     <li class="nav-item">
       <a href="#" class="nav-link">TVBS</a>
@@ -194,8 +194,6 @@
     <!-- 綠色底子 -->
     <div class="row" id="Green">
 
-
-
       <div class="col" id="SanliNews">
         三立<br>
         <img id="SanliNewsimg" src="" alt="">
@@ -204,7 +202,6 @@
 
       <div class="col" id="Udn">
         聯合新聞<br>
-        <p id=""></p>
       </div>
 
       <div class="col" id="Freetime">
@@ -215,17 +212,10 @@
     </div>
 
     <!-- 中立 -->
-    <div class="row" id="Black">
-
-      <div class="col">
-        風端媒<br>
-        <p id="Theinitium"></p>
-      </div>
-      <div class="col">
-        聯合<br>
-        <p id="Jointnews"></p>
-      </div>
+    <div class="row" id="Taiwan">
+      台視<br>
     </div>
+
 
     <!-- 藍色底子 -->
 
@@ -233,16 +223,6 @@
 
       <div class="col" id="tvbs">
         TVBS<br>
-      </div>
-      <div class="col" id="Huashi">
-        華視<br>
-
-      </div>
-      <div class="col" id="Taiwan">
-        台視<br>
-      </div>
-      <div class="col" id="Dongsen">
-        東森<br>
       </div>
       <div class="col" id="Ctitv">
         中天<br>

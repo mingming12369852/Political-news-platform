@@ -67,7 +67,7 @@ getIMG[7] = ".part_pictxt_3 img";
 getIMG[8] = ".logo";
 getIMG[9] = ".img > img";
 
-//未完成 img屬性
+//未完成 img屬性gghgfgggg
 var getIMGconition = new Array(10);
 getIMGconition[1] = "data-original";
 getIMGconition[2] = "src";
