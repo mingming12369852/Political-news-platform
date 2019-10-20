@@ -126,7 +126,7 @@ function getData(url, method, getname, name, img, imgconition) {
 
     obj = [];
     objimg = [];
-    fs.writeFileSync("build/Data01.json", JSON.stringify({
+    fs.writeFileSync("build/Data02.json", JSON.stringify({
       all
     }));
     date = all;

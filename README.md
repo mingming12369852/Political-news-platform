@@ -38,7 +38,7 @@
 
     or <br>
 
-    https://nodereptile1.herokuapp.com/
+https://myfist01.herokuapp.com/
     or u can go to this
 
 拿到資料<br>
