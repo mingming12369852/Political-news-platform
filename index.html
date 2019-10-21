@@ -78,19 +78,14 @@
 
 
   </script>
-  <script type="text/javascript"src="https://myfist01.herokuapp.com/">
-function getddata(date){
-  console.log(date);
 
-}
-  </script>
   <!-- 抓取本地 .json 打印到hmtl 頁面上。 -->
   <script type="text/javascript">
 
 
 
-    var Liberty_Times = "http://127.0.0.1/Political-news-platform/build/Data01.json";
-    // var Liberty_Times = "https://myfist01.herokuapp.com/";
+    // var Liberty_Times = "http://127.0.0.1/Political-news-platform/build/Data01.json";
+    var Liberty_Times = "https://myfist01.herokuapp.com/";
     var request = new XMLHttpRequest();
     var e = [];
     var m = [];
@@ -120,15 +115,15 @@ function getddata(date){
         e = d;
         console.log(d);
         for (var i = 0; i < 5; i++) {
-
-          // $("#SanliNews").append("<img  src=" + e['all'].三立新聞img[i] + ">" + "<p>" + e['all'].三立新聞[i] + "<p>" + "<td>");
-          // $("#Huashi").append("<img src=" + e['all'].華視img[i] + ">" + "<p>" + e['all'].華視[i] + "<p>" + "<td>");
-          // $("#Dongsen").append("<img src=" + e['all'].東森img[i] + ">" + "<p>" + e['all'].東森[i] + "<p>" + "<td>");
-          // $("#Freetime").append("<img src=" + e['all'].自由時報img[i] + ">" + "<p>" + e['all'].自由時報[i] + "<p>" + "<td>");
-          // $("#tvbs").append("<img src=" + e['all'].tvbsimg[i] + ">" + "<p>" + e['all'].tvbs[i] + "<p>" + "<td>");
-          // $("#Taiwan").append("<img " + "src=" + "https://www.ttv.com.tw/group/15/images/logo_TTV.jpg" + ">" + "<p>" + e['all'].台視[i] + "<p>" + "<td>").attr('class', "img-thumbnail");
-          // $("#Ctitv").append("<img " + "src=" + e['all'].中天img[i] + ">" + "<p>" + e['all'].中天[i] + "<p>" + "<td>");
-          // $("#Udn").append("<img " + "src=" + e['all'].聯合新聞img[i] + ">" + "<p>" + e['all'].聯合新聞[i] + "<p>" + "<td>");
+          console.log(e.三立新聞[1]);
+          $("#SanliNews").append("<img  src=" + e.三立新聞img[i] + ">" + "<p>" + e.三立新聞[i] + "<p>" + "<td>");
+          $("#Huashi").append("<img src=" + e.華視img[i] + ">" + "<p>" + e.華視[i] + "<p>" + "<td>");
+          $("#Dongsen").append("<img src=" + e.東森img[i] + ">" + "<p>" + e.東森[i] + "<p>" + "<td>");
+          $("#Freetime").append("<img src=" + e.自由時報img[i] + ">" + "<p>" + e.自由時報[i] + "<p>" + "<td>");
+          $("#tvbs").append("<img src=" + e.tvbsimg[i] + ">" + "<p>" + e.tvbs[i] + "<p>" + "<td>");
+          $("#Taiwan").append("<img " + "src=" + "https://www.ttv.com.tw/group/15/images/logo_TTV.jpg" + ">" + "<p>" + e.台視[i] + "<p>" + "<td>").attr('class', "img-thumbnail");
+          $("#Ctitv").append("<img " + "src=" + e.中天img[i] + ">" + "<p>" + e.中天[i] + "<p>" + "<td>");
+          $("#Udn").append("<img " + "src=" + e.聯合新聞img[i] + ">" + "<p>" + e.聯合新聞[i] + "<p>" + "<td>");
         }
 
       });
@@ -143,7 +138,7 @@ function getddata(date){
 </head>
 
 <body>
-  <button type="button" onclick="getddata();" name="button"></button>
+  <!-- <button type="button" onclick="getddata();" name="button"></button> -->
   <p></p>
   <!-- 首頁選單 -->
   <div id="faler-body">
@@ -153,7 +148,7 @@ function getddata(date){
         <button type="button" class="but btn-outline-success btn-lg" Onclick="position('Green');getData_()" ;>我是綠色底子</button>
         <button type="button" class="but btn-outline-dark btn-lg" Onclick="position('Black');getData_()" ;>全部都要</button>
         <button type="button" class="but btn-outline-primary btn-lg" Onclick="position('Blue');getData_()" ;>我是藍色底子</button>
-        <p class="nav justify-content-end">這會影響到你瀏覽時的動態資訊。<p><br> v1.4目前是測試階段：上方按鈕暫無功能...<p></p>
+        <p class="nav justify-content-end">這會影響到你瀏覽時的動態資訊。<p><br> v1 .43目前是測試階段：上方按鈕暫無功能...<p></p>
       </div>
     </div>
   </div>
