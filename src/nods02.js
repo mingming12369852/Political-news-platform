@@ -15,6 +15,8 @@ function startServer() {
 
   const server = http.createServer((req, res) => {
     res.statusCode = 200;
+    res.setHeader('Access-Control-Allow-Origin',"*")
+    res.setHeader("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");  
     res.setHeader("Content-Type", "application/json; charset=utf-8");
     console.log("HI");
     var Alldata = date;

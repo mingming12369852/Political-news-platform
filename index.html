@@ -78,16 +78,15 @@
 
 
   </script>
+  <script type="text/javascript"src="https://myfist01.herokuapp.com/">
+function getddata(date){
+  console.log(date);
+
+}
+  </script>
   <!-- 抓取本地 .json 打印到hmtl 頁面上。 -->
   <script type="text/javascript">
-  $.ajax({
-    url: 'https://myfist01.herokuapp.com/',
-    dataType: 'json',
-    type: "GET",
-    success: function (data){
-        console.log(data);
-    }
-})
+
 
 
     var Liberty_Times = "http://127.0.0.1/Political-news-platform/build/Data01.json";
@@ -144,7 +143,7 @@
 </head>
 
 <body>
-  <button type="button" onclick="getData_();" name="button"></button>
+  <button type="button" onclick="getddata();" name="button"></button>
   <p></p>
   <!-- 首頁選單 -->
   <div id="faler-body">
