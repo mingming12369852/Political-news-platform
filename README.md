@@ -49,9 +49,7 @@ http://127.0.0.1:5000/
 https://myfist01.herokuapp.com/
 
 
-部份新聞平台的標題容都會載入在這裡。
-
----
-
 ## 範例
+
+
 ![](https://i.imgur.com/Cmk4Ff0.png)
