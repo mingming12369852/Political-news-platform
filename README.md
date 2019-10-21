@@ -43,13 +43,13 @@ http://127.0.0.1:5000/
 
 ```
 
-或是 
+或是
 
 標題and圖片的Json會到這裡
 https://myfist01.herokuapp.com/
 
 
 ## 範例
-
-
+<br>
+https://mingming12369852.github.io/Political-news-platform/<br>
 ![](https://i.imgur.com/Cmk4Ff0.png)
