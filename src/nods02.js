@@ -17,9 +17,9 @@ function startServer() {
     res.statusCode = 200;
     res.setHeader("Content-Type", "application/json; charset=utf-8");
     console.log("HI");
-
+    var Alldata = date;
     // res.write();
-    console.log(date);
+    // console.log(date);
     res.end(JSON.stringify(date, "utf-8"));
   });
 

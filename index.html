@@ -12,71 +12,90 @@
   <!-- WEB.css -->
   <style src="text/css">
     #top {
-        background-color: rgb(196, 222, 97);
+      background-color: rgb(196, 222, 97);
     }
-    #text p{
-        font-size:10px;
+
+    #text p {
+      font-size: 10px;
     }
+
     #index-top {
-        background: -webkit-linear-gradient(left,rgb(110, 199, 0),rgb(5, 0, 255));
+      background: -webkit-linear-gradient(left, rgb(110, 199, 0), rgb(5, 0, 255));
 
     }
-    #index-top a{
 
-        font-size: 100%;
-        color:rgb(255, 255, 255);
+    #index-top a {
+
+      font-size: 100%;
+      color: rgb(255, 255, 255);
     }
 
-    #faler-body{
-        background-color: rgb(107, 178, 255);
-        width:100%;
-        height:100%;
-        z-index:1;
-        position:absolute;
+    #faler-body {
+      background-color: rgb(107, 178, 255);
+      width: 100%;
+      height: 100%;
+      z-index: 1;
+      position: absolute;
     }
 
-    #mid{
-        width: atom;
+    #mid {
+      width: atom;
 
-        position:absolute;
-        left:50%;
-        top: 50%;
-        margin-left: -220px;
-      }
-    #mid-butt{
-      width:480;
-      }
-
-    #Green{
-      background:-webkit-linear-gradient(left,rgb(4, 255, 14),rgb(166, 255, 209));
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      margin-left: -220px;
     }
-    #Black{
+
+    #mid-butt {
+      width: 480;
+    }
+
+    #Green {
+      background: -webkit-linear-gradient(left, rgb(4, 255, 14), rgb(166, 255, 209));
+    }
+
+    #Black {
       background-color: rgb(117, 117, 117);
     }
-    #Blue{
-      background:-webkit-linear-gradient(right,rgb(76, 83, 250),rgb(152, 159, 255));
+
+    #Blue {
+      background: -webkit-linear-gradient(right, rgb(76, 83, 250), rgb(152, 159, 255));
     }
+
     img {
       height: 75px;
-      width:  75px;
+      width: 75px;
 
     }
-              </style>
+  </style>
   <!-- 收起選單 -->
   <script type="text/javascript">
     function position(number) {
       console.log(number);
       $('#faler-body').slideUp("slow");
     }
+
+
   </script>
   <!-- 抓取本地 .json 打印到hmtl 頁面上。 -->
   <script type="text/javascript">
-    var Liberty_Times = "http://127.0.0.1/Political-news-platform/build/Data02.json";
+  $.ajax({
+    url: 'https://myfist01.herokuapp.com/',
+    dataType: 'json',
+    type: "GET",
+    success: function (data){
+        console.log(data);
+    }
+})
 
+
+    var Liberty_Times = "http://127.0.0.1/Political-news-platform/build/Data01.json";
+    // var Liberty_Times = "https://myfist01.herokuapp.com/";
     var request = new XMLHttpRequest();
     var e = [];
     var m = [];
-    request.open('GET', Liberty_Times);
+    request.open('get', Liberty_Times,true);
     request.responseType = 'json';
     request.send();
 
@@ -100,18 +119,22 @@
 
       $.getJSON(Liberty_Times, function(d) {
         e = d;
+        console.log(d);
+        for (var i = 0; i < 5; i++) {
+
+          // $("#SanliNews").append("<img  src=" + e['all'].三立新聞img[i] + ">" + "<p>" + e['all'].三立新聞[i] + "<p>" + "<td>");
+          // $("#Huashi").append("<img src=" + e['all'].華視img[i] + ">" + "<p>" + e['all'].華視[i] + "<p>" + "<td>");
+          // $("#Dongsen").append("<img src=" + e['all'].東森img[i] + ">" + "<p>" + e['all'].東森[i] + "<p>" + "<td>");
+          // $("#Freetime").append("<img src=" + e['all'].自由時報img[i] + ">" + "<p>" + e['all'].自由時報[i] + "<p>" + "<td>");
+          // $("#tvbs").append("<img src=" + e['all'].tvbsimg[i] + ">" + "<p>" + e['all'].tvbs[i] + "<p>" + "<td>");
+          // $("#Taiwan").append("<img " + "src=" + "https://www.ttv.com.tw/group/15/images/logo_TTV.jpg" + ">" + "<p>" + e['all'].台視[i] + "<p>" + "<td>").attr('class', "img-thumbnail");
+          // $("#Ctitv").append("<img " + "src=" + e['all'].中天img[i] + ">" + "<p>" + e['all'].中天[i] + "<p>" + "<td>");
+          // $("#Udn").append("<img " + "src=" + e['all'].聯合新聞img[i] + ">" + "<p>" + e['all'].聯合新聞[i] + "<p>" + "<td>");
+        }
+
       });
 
-      for (var i = 0; i < 5; i++) {
-        $("#SanliNews").append("<img  src=" + e['all'].三立新聞img[i] + ">" + "<p>" + e['all'].三立新聞[i] + "<p>" + "<td>");
-        $("#Huashi").append("<img src=" + e['all'].華視img[i] + ">" + "<p>" + e['all'].華視[i] + "<p>" + "<td>");
-        $("#Dongsen").append("<img src=" + e['all'].東森img[i] + ">" + "<p>" + e['all'].東森[i] + "<p>" + "<td>");
-        $("#Freetime").append("<img src=" + e['all'].自由時報img[i] + ">" + "<p>" + e['all'].自由時報[i] + "<p>" + "<td>");
-        $("#tvbs").append("<img src=" + e['all'].tvbsimg[i] + ">" + "<p>" + e['all'].tvbs[i] + "<p>" + "<td>");
-        $("#Taiwan").append("<img " + "src=" + "https://www.ttv.com.tw/group/15/images/logo_TTV.jpg" + ">" + "<p>" + e['all'].台視[i] + "<p>" + "<td>").attr('class', "img-thumbnail");
-        $("#Ctitv").append("<img " + "src=" + e['all'].中天img[i] + ">" + "<p>" + e['all'].中天[i] + "<p>" + "<td>");
-        $("#Udn").append("<img " + "src=" + e['all'].聯合新聞img[i] + ">" + "<p>" + e['all'].聯合新聞[i] + "<p>" + "<td>");
-      }
+
 
     }
   </script>
@@ -121,17 +144,17 @@
 </head>
 
 <body>
+  <button type="button" onclick="getData_();" name="button"></button>
   <p></p>
-  <button onclick="getData_()"></button>
   <!-- 首頁選單 -->
   <div id="faler-body">
     <div id="mid">
       <div id="mid-butt" class="alert alert-primary">
         <p>請問你的"政治"立場??</p>
-        <button type="button" class="but btn-outline-success btn-lg" Onclick="position('Green')" ;>我是綠色底子</button>
-        <button type="button" class="but btn-outline-dark btn-lg" Onclick="position('Black');" ;>全部都要</button>
-        <button type="button" class="but btn-outline-primary btn-lg" Onclick="position('Blue')" ;>我是藍色底子</button>
-        <p class="nav justify-content-end">這會影響到你瀏覽時的動態資訊。</p>
+        <button type="button" class="but btn-outline-success btn-lg" Onclick="position('Green');getData_()" ;>我是綠色底子</button>
+        <button type="button" class="but btn-outline-dark btn-lg" Onclick="position('Black');getData_()" ;>全部都要</button>
+        <button type="button" class="but btn-outline-primary btn-lg" Onclick="position('Blue');getData_()" ;>我是藍色底子</button>
+        <p class="nav justify-content-end">這會影響到你瀏覽時的動態資訊。<p><br> v1.4目前是測試階段：上方按鈕暫無功能...<p></p>
       </div>
     </div>
   </div>
@@ -147,41 +170,31 @@
   <!-- 政治光譜-->
   <ul class="nav justify-content-center" id="index-top">
     <li class="nav-item">
-      <a href="#" class="nav-link active" onclick="getData()">民視</a>
+      <a href="#" class="nav-link active">三立</a>
     </li>
 
     <li class="nav-item">
-      <a href="#" class="nav-link">三立</a>
+      <a href="#" class="nav-link">聯合時報</a>
     </li>
 
-    <li class="nav-item">
-      <a href="#" class="nav-link">年代新聞</a>
-    </li>
 
     <li class="nav-item">
       <a href="#" class="nav-link">自由</a>
     </li>
 
-    <li class="nav-item">
-      <a href="#" class="nav-link">風媒端</a>
+    <li class="nav-item" style="background-color :#ffffff">
+      <a href="#" class="nav-link" style="color :#000000">台視</a>
     </li>
 
-    <li class="nav-item">
-      <a href="#" class="nav-link">聯合</a>
-    </li>
     <li class="nav-item">
       <a href="#" class="nav-link">TVBS</a>
     </li>
-    <li class="nav-itme">
-      <a href="#" class="nav-link">華視</a>
-    </li>
+
     <li class="nav-time">
-      <a href="#" class="nav-link">東森</a>
+      <a href="#" class="nav-link">中天</a>
     </li>
 
-    <li class="nav-item">
-      <a href="#" class="nav-link">台視</a>
-    </li>
+
 
     <li class="nav-item">
       <a href="#" class="nav-link disabled"></a>
