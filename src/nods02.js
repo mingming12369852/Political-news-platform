@@ -5,34 +5,12 @@ const delay = require('delay');
 const http = require("http");
 
 
-var date;
 
-function startServer() {
+//=================================================server MOD
 
-  //=================================================server MOD
-  const hostname = "127.0.0.1";
-  const port = process.env.PORT || 5000;
+//=================================================
 
-  const server = http.createServer((req, res) => {
-    res.statusCode = 200;
-    res.setHeader('Access-Control-Allow-Origin',"*")
-    res.setHeader("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
-    res.setHeader("Content-Type", "application/json; charset=utf-8");
-    console.log("HI");
-    var Alldata = date;
-    // res.write();
-    // console.log(date);
-    res.end(JSON.stringify(date, "utf-8"));
-  });
-
-  server.listen(port, hostname, () => {
-    console.log(`Server running at http://${hostname}:${port}/`);
-  });
-
-  server.listen(port);
-  //=================================================
-}
-
+//=================================================Data URL
 var all = {};
 var allUrl = new Array(10); // 所有的鏈
 
@@ -68,7 +46,7 @@ getIMG[6] = ".newsimg-thumb img";
 getIMG[7] = ".part_pictxt_3 img";
 getIMG[9] = ".img src";
 
-//未完成 img屬性
+//圖片中的連結來源
 var getIMGconition = new Array(10);
 getIMGconition[1] = "data-original";
 getIMGconition[2] = "src";
@@ -79,12 +57,14 @@ getIMGconition[7] = "src";
 
 
 
+
+
+//=======================================================
+//=================================================
 var obj = [];
 var objimg = [];
 var all = {};
 const finalResult = {}
-
-//=======================================================
 
 var json_Floor = 0; //暫存　json的位置
 var getdata_name_code = 0; //暫存 名子位置
@@ -94,14 +74,49 @@ var peopleData = [];
 var name;
 var status_time = true; //狀態
 
+
+// in Start
+
 for (var x = 0; x < allUrl.length; x++) {
+
   if (allUrl[x] !== null) {
-    getdata_name(getdata_name_code);
+    getdata_name(getdata_name_code); //建立 資料存放 的名稱
     getData(allUrl[x], "GET", getconition[x], getdata_name_haha, getIMG[x], getIMGconition[x]);
+    //連結,連線方式,文字的class title,n的名稱{ n :Data} ,圖片的class,圖片中的連結來源 src
     getdata_name_code++;
   }
+
 }
 
+//================================================Function Code
+var date;
+
+//開啟server 127.0.0.1:5000
+function startServer() {
+
+
+  const hostname = "127.0.0.1";
+  const port = process.env.PORT || 5000;
+
+  const server = http.createServer((req, res) => {
+    res.statusCode = 200;
+    res.setHeader('Access-Control-Allow-Origin', "*")
+    res.setHeader("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+    res.setHeader("Content-Type", "application/json; charset=utf-8");
+    console.log("HI");
+    var Alldata = date;
+    // res.write();
+    // console.log(date);
+    res.end(JSON.stringify(date, "utf-8"));
+  });
+
+  server.listen(port, hostname, () => {
+    console.log(`Server running at http://${hostname}:${port}/`);
+  });
+
+  server.listen(port);
+
+}
 
 function getData(url, method, getname, name, img, imgconition) {
   console.log(img);
@@ -170,6 +185,6 @@ function getdata_name(number) {
   }
 
 }
-console.log(date);
 
 startServer();
+//=================================================
