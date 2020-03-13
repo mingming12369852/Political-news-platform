@@ -1,243 +1,114 @@
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
+<!DOCTYPE HTML>
+<!--
+	Full Motion by TEMPLATED
+	templated.co @templatedco
+	Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
+-->
+<html>
 
 <head>
-  <meta charset="utf-8">
-  <title>綜合新聞 ｜ 政治</title>
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
-  </style>
-  <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-
-  </script>
-  <!-- WEB.css -->
-  <style src="text/css">
-    #top {
-      background-color: rgb(196, 222, 97);
-    }
-
-    #text p {
-      font-size: 10px;
-    }
-
-    #index-top {
-      background: -webkit-linear-gradient(left, rgb(110, 199, 0), rgb(5, 0, 255));
-
-    }
-
-    #index-top a {
-
-      font-size: 100%;
-      color: rgb(255, 255, 255);
-    }
-
-    #faler-body {
-      background-color: rgb(107, 178, 255);
-      width: 100%;
-      height: 100%;
-      z-index: 1;
-      position: absolute;
-    }
-
-    #mid {
-      width: atom;
-
-      position: absolute;
-      left: 50%;
-      top: 50%;
-      margin-left: -220px;
-    }
-
-    #mid-butt {
-      width: 480;
-    }
-
-    #Green {
-      background: -webkit-linear-gradient(left, rgb(4, 255, 14), rgb(166, 255, 209));
-    }
-
-    #Black {
-      background-color: rgb(117, 117, 117);
-    }
-
-    #Blue {
-      background: -webkit-linear-gradient(right, rgb(76, 83, 250), rgb(152, 159, 255));
-    }
-
-    img {
-      height: 75px;
-      width: 75px;
-
-    }
-  </style>
-  <!-- 收起選單 -->
-  <script type="text/javascript">
-    function position(number) {
-      console.log(number);
-      $('#faler-body').slideUp("slow");
-    }
-
-
-  </script>
-
-  <!-- 抓取本地 .json 打印到hmtl 頁面上。 -->
-  <script type="text/javascript">
-
-
-
-    // var Liberty_Times = "http://127.0.0.1/Political-news-platform/build/Data01.json";
-    var Liberty_Times = "https://myfist01.herokuapp.com/";
-    var request = new XMLHttpRequest();
-    var e = [];
-    var m = [];
-    request.open('get', Liberty_Times,true);
-    request.responseType = 'json';
-    request.send();
-
-    // request.onload = function() {
-    //   var superHerose = request.response;
-    //   populeateHeader(superHerose);
-    // }
-    // function populeateHeader(jsonObj) {
-    //   var myH1 = document.createElement('p');
-    //   var br = document.createElement("br");
-    //   for (var i = 0; i < jsonObj.length; i++) {
-    //     if (jsonObj[i] = "自由時報 ")
-    //       myH1.innerText += jsonObj[i] + "\n";
-    //
-    //     // document.getElementById('text').append(myH1);;
-    //   }
-    // }
-
-
-    function getData_(name) {
-
-      $.getJSON(Liberty_Times, function(d) {
-        e = d;
-        console.log(d);
-        for (var i = 0; i < 5; i++) {
-          console.log(e.三立新聞[1]);
-          $("#SanliNews").append("<img  src=" + e.三立新聞img[i] + ">" + "<p>" + e.三立新聞[i] + "<p>" + "<td>");
-          $("#Huashi").append("<img src=" + e.華視img[i] + ">" + "<p>" + e.華視[i] + "<p>" + "<td>");
-          $("#Dongsen").append("<img src=" + e.東森img[i] + ">" + "<p>" + e.東森[i] + "<p>" + "<td>");
-          $("#Freetime").append("<img src=" + e.自由時報img[i] + ">" + "<p>" + e.自由時報[i] + "<p>" + "<td>");
-          $("#tvbs").append("<img src=" + e.tvbsimg[i] + ">" + "<p>" + e.tvbs[i] + "<p>" + "<td>");
-          $("#Taiwan").append("<img " + "src=" + "https://www.ttv.com.tw/group/15/images/logo_TTV.jpg" + ">" + "<p>" + e.台視[i] + "<p>" + "<td>").attr('class', "img-thumbnail");
-          $("#Ctitv").append("<img " + "src=" + e.中天img[i] + ">" + "<p>" + e.中天[i] + "<p>" + "<td>");
-          $("#Udn").append("<img " + "src=" + e.聯合新聞img[i] + ">" + "<p>" + e.聯合新聞[i] + "<p>" + "<td>");
-        }
-
-      });
-
-
-
-    }
-  </script>
-
-
-
+	<title>綜合新聞 ｜ 政治</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<link rel="stylesheet" href="assets/css/main.css" />
 </head>
 
-<body>
-  <!-- <button type="button" onclick="getddata();" name="button"></button> -->
-  <p></p>
-  <!-- 首頁選單 -->
-  <div id="faler-body">
-    <div id="mid">
-      <div id="mid-butt" class="alert alert-primary">
-        <p>請問你的"政治"立場??</p>
-        <button type="button" class="but btn-outline-success btn-lg" Onclick="position('Green');getData_()" ;>我是綠色底子</button>
-        <button type="button" class="but btn-outline-dark btn-lg" Onclick="position('Black');getData_()" ;>全部都要</button>
-        <button type="button" class="but btn-outline-primary btn-lg" Onclick="position('Blue');getData_()" ;>我是藍色底子</button>
-        <p class="nav justify-content-end">這會影響到你瀏覽時的動態資訊。<p><br> v1 .43目前是測試階段：上方按鈕暫無功能...<p></p>
-      </div>
-    </div>
-  </div>
+<body id="top">
 
-  <p id="text"></p>
-  <!-- 標題 -->
-  <div id="top">
-    <h1>新聞集資平台。</h1>
-    <p class="text-right">-</p>
-    政治光譜
-  </div>
+	<!-- Banner -->
+	<!--
+				To use a video as your background, set data-video to the name of your video without
+				its extension (eg. images/banner). Your video must be available in both .mp4 and .webm
+				formats to work correctly.
+			-->
+	<section id="banner" data-video="images/banner">
+		<div class="inner">
+			<header>
+				<h1>綜合新聞 ｜ 政治</h1>
+				<p>瀏覽你平時就已經在"關注"的媒體。 <br />
+					在這裡你也能看到其他家媒體是如何對事情下標題的？</p><br>
+          網站目前為開發階段 版本號v1.43a
+			</header>
+			<a href="#main" class="more">Learn More</a>
+		</div>
+	</section>
 
-  <!-- 政治光譜-->
-  <ul class="nav justify-content-center" id="index-top">
-    <li class="nav-item">
-      <a href="#" class="nav-link active">三立</a>
-    </li>
+	<!-- Main -->
+	<div id="main">
+		<div class="inner">
 
-    <li class="nav-item">
-      <a href="#" class="nav-link">聯合時報</a>
-    </li>
+			<!-- Boxes -->
+			<div class="thumbnails">
 
+				<div class="box">
+					<h1>東森</h1>
+					<a href="https://youtu.be/s6zR2T9vn2c" class="image fit"><img src="images/pic01.jpg" alt="" /></a>
+					<div class="inner">
+						<h3>Nascetur nunc varius commodo</h3>
+						<p>Interdum amet accumsan placerat commodo ut amet aliquam blandit nunc tempor lobortis nunc non. Mi accumsan.</p>
+						<a href="https://youtu.be/s6zR2T9vn2c" class="button fit" data-poptrox="youtube,800x400">Watch</a>
+					</div>
+					<a href="https://youtu.be/s6zR2T9vn2c" class="image fit"><img src="images/pic01.jpg" alt="" /></a>
+					<div class="inner">
+						<h3>Nascetur nunc varius commodo</h3>
+						<p>Interdum amet accumsan placerat commodo ut amet aliquam blandit nunc tempor lobortis nunc non. Mi accumsan.</p>
+						<a href="https://youtu.be/s6zR2T9vn2c" class="button fit" data-poptrox="youtube,800x400">Watch</a>
+					</div>
+				</div>
 
-    <li class="nav-item">
-      <a href="#" class="nav-link">自由</a>
-    </li>
+				<div class="box">
+					<h1>中視</h1>
+					<a href="https://youtu.be/s6zR2T9vn2c" class="image fit"><img src="images/pic01.jpg" alt="" /></a>
+					<div class="inner">
+						<h3>Nascetur nunc varius commodo</h3>
+						<p>Interdum amet accumsan placerat commodo ut amet aliquam blandit nunc tempor lobortis nunc non. Mi accumsan.</p>
+						<a href="https://youtu.be/s6zR2T9vn2c" class="button fit" data-poptrox="youtube,800x400">Watch</a>
+					</div>
+				</div>
 
-    <li class="nav-item" style="background-color :#ffffff">
-      <a href="#" class="nav-link" style="color :#000000">台視</a>
-    </li>
+				<div class="box">
+					<h1>中天</h1>
+					<a href="https://youtu.be/s6zR2T9vn2c" class="image fit"><img src="images/pic01.jpg" alt="" /></a>
+					<div class="inner">
+						<h3>Nascetur nunc varius commodo</h3>
+						<p>Interdum amet accumsan placerat commodo ut amet aliquam blandit nunc tempor lobortis nunc non. Mi accumsan.</p>
+						<a href="https://youtu.be/s6zR2T9vn2c" class="button fit" data-poptrox="youtube,800x400">Watch</a>
+					</div>
+				</div>
 
-    <li class="nav-item">
-      <a href="#" class="nav-link">TVBS</a>
-    </li>
-
-    <li class="nav-time">
-      <a href="#" class="nav-link">中天</a>
-    </li>
-
-
-
-    <li class="nav-item">
-      <a href="#" class="nav-link disabled"></a>
-    </li>
-  </ul>
-
-  <!-- 所有新聞標題 -->
-  <div class="container">
-
-    <!-- 綠色底子 -->
-    <div class="row" id="Green">
-
-      <div class="col" id="SanliNews">
-        三立<br>
-        <img id="SanliNewsimg" src="" alt="">
-        <!-- <p id="SanliNews"></p> -->
-      </div>
-
-      <div class="col" id="Udn">
-        聯合新聞<br>
-      </div>
-
-      <div class="col" id="Freetime">
-        自由時報<br>
-
-      </div>
-
-    </div>
-
-    <!-- 中立 -->
-    <div class="row" id="Taiwan">
-      台視<br>
-    </div>
+			</div>
 
 
-    <!-- 藍色底子 -->
 
-    <div class="row" id="Blue">
+		</div>
+	</div>
 
-      <div class="col" id="tvbs">
-        TVBS<br>
-      </div>
-      <div class="col" id="Ctitv">
-        中天<br>
-      </div>
+	<!-- Footer -->
+	<footer id="footer">
+		<div class="inner">
+			<h2>關於 雜燴新聞</h2>
+			<p>我們希望這個平台，能夠給已經在關注網頁新聞的人，或是第一次看網路媒體的人。<br>
+				以寬廣的視野以及不同的角度去關注目前的時事不管你是左派還是右派，都希望能以中立的角度去看待世界上所正在發生的每件事情。
+				<br>建立起正確的價值觀，走訪世界上的大小事情。 </p>
 
-    </div>
+			<!-- <ul class="icons">
+				<li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+				<li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
+				<li><a href="#" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
+				<li><a href="#" class="icon fa-envelope"><span class="label">Email</span></a></li>
+			</ul> -->
 
-  </div>
+			<p class="copyright">&copy; Untitled. Design: <a href="https://templated.co">TEMPLATED</a>. Images: <a href="https://unsplash.com/">Unsplash</a>. Videos: <a href="http://coverr.co/">Coverr</a>.</p>
+		</div>
+	</footer>
+
+	<!-- Scripts -->
+	<script src="assets/js/jquery.min.js"></script>
+	<script src="assets/js/jquery.scrolly.min.js"></script>
+	<script src="assets/js/jquery.poptrox.min.js"></script>
+	<script src="assets/js/skel.min.js"></script>
+	<script src="assets/js/util.js"></script>
+	<script src="assets/js/main.js"></script>
 
 </body>
 
