@@ -39,7 +39,7 @@ getconition[9] = ".post-title a";
 var getIMG = new Array(10); //圖片中的條件 .class
 //未完成
 getIMG[1] = ".lazy";
-getIMG[2] = ".list img";
+getIMG[2] = "a.ph.listS_h > img";
 getIMG[4] = ".ratio-container >img";
 getIMG[5] = ".lazyimage";
 getIMG[6] = ".newsimg-thumb img";
@@ -143,7 +143,7 @@ function getData(url, method, getname, name, img, imgconition) {
 
     obj = [];
     objimg = [];
-    fs.writeFileSync("build/Data01.json", JSON.stringify({
+    fs.writeFileSync("json/Data01.json", JSON.stringify({
       all
     }));
     date = all;
