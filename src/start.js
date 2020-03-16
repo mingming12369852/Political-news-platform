@@ -115,8 +115,6 @@ function startServer() {
   });
 
   server.listen(port);
-  console.log("HHI");
-  server.close(port);
 
 
 }
