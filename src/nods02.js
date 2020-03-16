@@ -115,6 +115,9 @@ function startServer() {
   });
 
   server.listen(port);
+  console.log("HHI");
+  server.close(port);
+
 
 }
 
@@ -143,12 +146,13 @@ function getData(url, method, getname, name, img, imgconition) {
 
     obj = [];
     objimg = [];
-    fs.writeFileSync("json/Data01.json", JSON.stringify({
+    fs.writeFileSync("json/Data02.json", JSON.stringify({
       all
     }));
     date = all;
     console.log(date);
   });
+
 }
 
 function getdata_name(number) {
