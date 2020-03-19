@@ -14,6 +14,7 @@
 
 	<script type="text/javascript">
 		var DataUrl = "https://myfist01.herokuapp.com/";
+		// var DataUrl = "https://myfist01.herokuapp.com/";
 		var request = new XMLHttpRequest();
 		var title = [];
 		var title_tex = [];
@@ -35,7 +36,7 @@
 						'</div>'
 					);
 					$("#ETtoday").append(
-						'<a class="image fit"><img src="' + e['EToday 新聞雲img'][i] + '"/></a>' +
+						'<a class="image fit"><img src="https:' + e['EToday 新聞雲img'][i] + '"/></a>' +
 						'<div class="inner">' +
 						'<h3 id="title">' + e['EToday 新聞雲'][i] + '</h3>' +
 						'<p> ' + "敘述" + '</p>' +
