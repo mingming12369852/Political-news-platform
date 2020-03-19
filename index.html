@@ -34,6 +34,22 @@
 						'<a href="https://youtu.be/s6zR2T9vn2c" class="button fit" data-poptrox="youtube,800x400">Watch</a>' +
 						'</div>'
 					);
+					$("#ETtoday").append(
+						'<a class="image fit"><img src="' + e['EToday 新聞雲img'][i] + '"/></a>' +
+						'<div class="inner">' +
+						'<h3 id="title">' + e['EToday 新聞雲'][i] + '</h3>' +
+						'<p> ' + "敘述" + '</p>' +
+						'<a href="https://youtu.be/s6zR2T9vn2c" class="button fit" data-poptrox="youtube,800x400">Watch</a>' +
+						'</div>'
+					);
+					$("#ttv").append(
+						'<a class="image fit"><img src="' + e['台視img'][i] + '"/></a>' +
+						'<div class="inner">' +
+						'<h3 id="title">' + e['台視'][i] + '</h3>' +
+						'<p> ' + "敘述" + '</p>' +
+						'<a href="https://youtu.be/s6zR2T9vn2c" class="button fit" data-poptrox="youtube,800x400">Watch</a>' +
+						'</div>'
+					);
 
 					// $("#SanliNews").append("<p>" + +"</p>");
 				}
@@ -46,7 +62,7 @@
 	</script>
 </head>
 
-<body id="top">
+<body id="top" onload="GetData()">
 
 	<!-- Banner -->
 	<!--
@@ -62,7 +78,7 @@
 					在這裡你也能看到其他家媒體是如何對事情下標題的？</p><br>
 			</header>
 			<a href="#main" class="more">Learn More</a>
-			<button type="button" name="button" onClick="GetData()">Get Me</button>
+			<!-- <button type="button" name="button" onClick="GetData()">Get Me</button> -->
 		</div>
 	</section>
 
@@ -78,24 +94,12 @@
 					<h1>自由時報</h1>
 				</div>
 
-				<div class="box">
-					<h1>ETtoday 新聞雲</h1>
-					<a href="https://youtu.be/s6zR2T9vn2c" class="image fit"><img src="images/pic01.jpg" alt="" /></a>
-					<div class="inner">
-						<h3>Nascetur nunc varius commodo</h3>
-						<p>Interdum amet accumsan placerat commodo ut amet aliquam blandit nunc tempor lobortis nunc non. Mi accumsan.</p>
-						<a href="https://youtu.be/s6zR2T9vn2c" class="button fit" data-poptrox="youtube,800x400">Watch</a>
-					</div>
+				<div class="box" id="EToday">
+					<h1>EToday 新聞雲</h1>
 				</div>
 
-				<div class="box">
+				<div class="box" id="TVBS">
 					<h1>TVBS</h1>
-					<a href="https://youtu.be/s6zR2T9vn2c" class="image fit"><img src="images/pic01.jpg" alt="" /></a>
-					<div class="inner">
-						<h3>Nascetur nunc varius commodo</h3>
-						<p>Interdum amet accumsan placerat commodo ut amet aliquam blandit nunc tempor lobortis nunc non. Mi accumsan.</p>
-						<a href="https://youtu.be/s6zR2T9vn2c" class="button fit" data-poptrox="youtube,800x400">Watch</a>
-					</div>
 				</div>
 
 			</div>
@@ -119,7 +123,7 @@
 				<li><a href="#" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
 				<li><a href="#" class="icon fa-envelope"><span class="label">Email</span></a></li>
 			</ul> -->
-			<p>/網站目前為開發階段 版本號v2 .27/</p>
+			<p>/網站目前為開發階段 版本號v2 .93/</p>
 			<!-- <p class="copyright">&copy; Untitled. Design: <a href="https://templated.co">TEMPLATED</a>. Images: <a href="https://unsplash.com/">Unsplash</a>. Videos: <a href="http://coverr.co/">Coverr</a>.</p> -->
 		</div>
 		<!-- </footer> -->

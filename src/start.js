@@ -23,6 +23,7 @@ allUrl[6] = "https://news.cts.com.tw/politics/"; //華視
 allUrl[7] = "https://www.ettoday.net/news/focus/%E6%94%BF%E6%B2%BB/"; //東森
 allUrl[8] = "https://www.ttv.com.tw/news/catlist/A"; //台視
 allUrl[9] = "http://gotv.ctitv.com.tw/category/politics-news" //中天
+allUrl[10] = "https://www.ettoday.net/news/focus/%E6%94%BF%E6%B2%BB/" // ETtoday 新聞雲
 
 var getconition = new Array(10); //文字中的條件 .class title
 
@@ -35,6 +36,7 @@ getconition[6] = ".newslist-container p";
 getconition[7] = ".part_pictxt_3 h3";
 getconition[8] = ".list_style_none a";
 getconition[9] = ".post-title a";
+getconition[10] = "div[class='piece clearfix'] h3";
 
 var getIMG = new Array(10); //圖片中的條件 .class
 //未完成
@@ -45,6 +47,7 @@ getIMG[5] = ".lazyimage";
 getIMG[6] = ".newsimg-thumb img";
 getIMG[7] = ".part_pictxt_3 img";
 getIMG[9] = ".img src";
+getIMG[10] = "div[class='piece clearfix'] img"
 
 //圖片中的連結來源
 var getIMGconition = new Array(10);
@@ -54,6 +57,7 @@ getIMGconition[4] = "data-src";
 getIMGconition[5] = "data-original";
 getIMGconition[6] = "src";
 getIMGconition[7] = "src";
+getIMGconition[10] = "data-original";
 
 
 
@@ -103,7 +107,7 @@ function startServer() {
     res.setHeader('Access-Control-Allow-Origin', "*")
     res.setHeader("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
     res.setHeader("Content-Type", "application/json; charset=utf-8");
-    console.log("HI");
+    console.log("-----Start Serve------");
     var Alldata = date;
     // res.write();
     // console.log(date);
@@ -111,6 +115,7 @@ function startServer() {
   });
 
   server.listen(port, hostname, () => {
+    console.log("------------------Start Server Time ------------------");
     console.log(`Server running at http://${hostname}:${port}/`);
   });
 
@@ -120,7 +125,7 @@ function startServer() {
 }
 
 function getData(url, method, getname, name, img, imgconition) {
-  console.log(img);
+  // console.log(img);
   request({
     url: url,
     method: method
@@ -182,6 +187,9 @@ function getdata_name(number) {
       break;
     case 9:
       getdata_name_haha = "中天";
+      break;
+    case 10:
+      getdata_name_haha = "EToday 新聞雲";
       break;
     default:
   }
