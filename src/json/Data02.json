@@ -1,34 +1,7 @@
 {
   "all": {
-    "三立新聞": ["新北暫關封閉型場館　柯P霸氣出這招", "中國本土0確診　他：抓到了搞台獨！", "都發局長兒美返台發燒　初採結果出爐", "漲健保費對付台商？蘇揆：假訊息", "王定宇提案：立委全面禁止出國"],
-    "三立新聞img": ["https://attach.setn.com/newsimages/2019/08/23/2090851-L.jpg", "https://attach.setn.com/newsimages/2020/02/10/2399939-L.jpg", "https://attach.setn.com/newsimages/2020/03/18/2462327-L.jpg", "https://attach.setn.com/newsimages/2020/02/14/2407028-L.jpg", "https://attach.setn.com/newsimages/2020/03/10/2449125-L.jpg"],
-    "三立新聞url": [null, null, null, null, null],
-    "中天": ["台中西屯清潔隊面臨無家可歸 楊瓊瓔協調軍方釋出搬遷用地", "防疫避免群聚活動 藍委呼籲蘇貞昌取消罷韓", "新北場館暫關閉 基隆不跟進", "盧秀燕再批中央激進  政院：非事實", "預防性全面停課？　蘇：影響大不輕率停課"],
-    "中天img": [null, null, null, null, null],
-    "中天url": [null, null, null, null, null],
-    "自由時報": ["武漢肺炎》政院規劃口罩寄給海外親友 將保障國內優先", "「LULU媽」隔空示愛挨酸 張育美：很多年輕人覺得我很可愛", "國民黨籍綠島鄉長臉書貼文    對中央防疫感到驕傲", "傳謝長廷續駐日 總統府：全力防疫、人事勿臆測", "「洗手罷韓T」明開賣有彩蛋 尹立漂亮老婆當模特兒"],
-    "自由時報img": ["https://img.ltn.com.tw/Upload/news/300/2020/03/20/phpK004su.jpg", "https://img.ltn.com.tw/Upload/news/300/2020/03/20/phpY6db0m.jpg", "https://img.ltn.com.tw/Upload/news/300/2020/03/20/3106961_1_1.jpg", "https://img.ltn.com.tw/Upload/news/300/2020/03/20/php8A3hqe.jpg", "https://img.ltn.com.tw/Upload/news/300/2020/03/20/3106868_1_1.jpg"],
-    "自由時報url": [null, null, null, null, null],
-    "東森": ["羅明才要蘇貞昌「1人發1萬」紓困：缺錢來找我！", "盧秀燕槓中央　政院：中市自治條例違反中央法規是事實", "疫情非常時期！妙天群聚開講　內政部回應了", "「救救台灣留學生！」國民黨籲蔡英文：適度開放家長寄口罩、防疫物資", "江啟臣上任黨主席首度提案！公民權下修18歲順利付委"],
-    "東森img": ["//cdn2.ettoday.net/style/ettoday2017/images/loading_200x150.gif", "//cdn2.ettoday.net/style/ettoday2017/images/loading_200x150.gif", "//cdn2.ettoday.net/style/ettoday2017/images/loading_200x150.gif", "//cdn2.ettoday.net/style/ettoday2017/images/loading_200x150.gif", "//cdn2.ettoday.net/style/ettoday2017/images/loading_200x150.gif"],
-    "東森url": [null, null, null, null, null],
-    "EToday 新聞雲": ["羅明才要蘇貞昌「1人發1萬」紓困：缺錢來找我！", "盧秀燕槓中央　政院：中市自治條例違反中央法規是事實", "疫情非常時期！妙天群聚開講　內政部回應了", "「救救台灣留學生！」國民黨籲蔡英文：適度開放家長寄口罩、防疫物資", "江啟臣上任黨主席首度提案！公民權下修18歲順利付委"],
-    "EToday 新聞雲img": ["//cdn2.ettoday.net/images/4769/c4769796.jpg", "//cdn2.ettoday.net/images/4753/c4753504.jpg", "//cdn2.ettoday.net/images/4585/c4585283.jpg", "//cdn2.ettoday.net/images/4769/c4769934.jpg", "//cdn2.ettoday.net/images/4765/c4765972.jpg"],
-    "EToday 新聞雲url": ["/news/20200320/1672632.htm", "/news/20200320/1672632.htm", "/news/20200320/1672596.htm", "/news/20200320/1672596.htm", "/news/20200320/1672599.htm"],
-    "端媒傳": ["北方醫療機構收治了意大利境內的絕大部分新冠患者。然而，病毒在南部大區的迅速傳播給了衞生服務一記重擊。", "從中國吊銷3名美國記者的簽證，到美國縮減中國官媒60名在美員工，再到中國驅逐3家美媒的十多名美籍記者……媒體已成中美衝突的前線。", "相對於奧斯卡，成敗對辛丹斯的導演，甚至是今天的新人來說，獎項真的不是關鍵⋯⋯", "為了保護老人，請與他們保持距離，然而……「老年人長時間無法見到自己的家人，大家是否想過其後果？」", "自信敘事被廣泛認可，也意味着宣傳系統在1月和2月份屢次失手之後，終於藉着國內疫情減緩、全球疫情暴發的「機會」，奪回了輿論場的話語權。"],
-    "端媒傳img": [null, null, null, null, null],
-    "端媒傳url": [null, null, null, null, null],
-    "聯合新聞": ["", "", "", "", ""],
-    "聯合新聞img": [null, null, null, null, null],
-    "聯合新聞url": [null, null, null, null, null],
-    "華視": ["2020/03/20 15:59陳時中兒設計罷韓T恤 他怒：對不起防疫人員、人民", "2020/03/20 12:45蘇揆立法院備詢 籲國人多消費衝經濟", "2020/03/20 09:55返國人潮爆! 蘇貞昌：台灣是最幸福的地方", "2020/03/19 14:45信心喊話「物資充足」蔡英文:屯貨、抬價將重罰", "2020/03/19 13:55紓困振興應「寬、快、方便」 蘇貞昌盼讓人民有感"],
-    "華視img": ["https://news.cts.com.tw/photo/cts/202003/202003201994361_b.jpg", "https://news.cts.com.tw/photo/cts/202003/202003201994322_b.jpg", "https://news.cts.com.tw/photo/cts/202003/202003201994299_b.jpg", null, null],
-    "華視url": [null, null, null, null, null],
-    "台視": ["雙北曝\"防疫旅館\"! 最貴1晚8500元全搶光　防疫也鎖定頂端客 7500元起可享星級料理", "喊話海外學子留當地 指揮中心:搭機不安全　直擊澳超市搶物資 留學生:不戴口罩很害怕", "民眾瘋搶物資 總統喊話:重罰囤貨哄抬物價　民眾掃貨 陳時中:相搶就不夠 相讓就有剩", "偏心?萬安質詢超時 召委陳玉珍讓他繼續講　中火處分案立委爆口角 藍批徐國勇惡意缺席", "1員工確診\"分組辦公\" 台積電:不影響產能　1員工確診逾30人隔離 台積電辦公室消毒"],
-    "台視img": [null, null, null, null, null],
-    "台視url": [null, null, null, null, null],
-    "tvbs": ["快訊／港新增48例創單日新高　其中36人曾出遊", "違反居家檢疫規定趴趴走　蘇貞昌：必罰快罰", "謝長廷520後動向受矚　府：全力防疫人事勿揣測", "聯發科擬買回1.59萬張庫藏股　8年多來首度實施", "居民憂伊甸音樂節爆發疫情　南投縣府將強制檢查"],
-    "tvbsimg": ["https://cc.tvbs.com.tw/img/_data/i/upload/2016/07/07/20160707002626-750e741d-sm.jpg", "https://cc.tvbs.com.tw/img/upload/2019/10/15/20191015164943-aea849b2.jpg", "https://cc.tvbs.com.tw/img/upload/2019/12/27/20191227091516-f57d0644.jpg", "https://cc.tvbs.com.tw/img/upload/2019/12/16/20191216143543-1398c37d.jpg", "https://cc.tvbs.com.tw/img/upload/2019/09/25/20190925130931-5e11cc15.jpg"],
-    "tvbsurl": [null, null, null, null, null]
+    "tvbs": ["白牌車冒充防疫車隊　林佳龍：加強取締不縱容", "建議蘇揆發放1萬元振興券 藍委:缺錢來找我", "快訊／港新增48例創單日新高　其中36人曾出遊", "違反居家檢疫規定趴趴走　蘇貞昌：必罰快罰", "謝長廷520後動向受矚　府：全力防疫人事勿揣測"],
+    "tvbsimg": ["https://cc.tvbs.com.tw/img/upload/2020/03/20/20200320171823-e106d745.jpg", "https://cc.tvbs.com.tw/img/upload/2020/03/20/20200320171707-aeb76f36.jpg", "https://cc.tvbs.com.tw/img/_data/i/upload/2016/07/07/20160707002626-750e741d-sm.jpg", "https://cc.tvbs.com.tw/img/upload/2019/10/15/20191015164943-aea849b2.jpg", "https://cc.tvbs.com.tw/img/upload/2019/12/27/20191227091516-f57d0644.jpg"],
+    "tvbsurl": ["/politics/1295876", "/politics/1295881", "/politics/1295848", "/politics/1295827", "/politics/1295822"]
   }
 }

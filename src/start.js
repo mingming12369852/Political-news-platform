@@ -14,16 +14,16 @@ const http = require("http");
 var all = {};
 var allUrl = new Array(10); // 所有的鏈
 
-allUrl[1] = "https://www.setn.com/Catalog.aspx?PageGroupID=6"; //三立新聞
-allUrl[2] = "http://news.ltn.com.tw/list/breakingnews/politics"; //自由時報
-allUrl[3] = "https://theinitium.com/"; //端媒傳
-allUrl[4] = "https://udn.com/news/cate/2/6638"; //聯合新聞
+// allUrl[1] = "https://www.setn.com/Catalog.aspx?PageGroupID=6"; //三立新聞
+// allUrl[2] = "http://news.ltn.com.tw/list/breakingnews/politics"; //自由時報
+// allUrl[3] = "https://theinitium.com/"; //端媒傳
+// allUrl[4] = "https://udn.com/news/cate/2/6638"; //聯合新聞
 allUrl[5] = "https://news.tvbs.com.tw/politics"; //tvbs
-allUrl[6] = "https://news.cts.com.tw/politics/"; //華視
-allUrl[7] = "https://www.ettoday.net/news/focus/%E6%94%BF%E6%B2%BB/"; //東森
-allUrl[8] = "https://www.ttv.com.tw/news/catlist/A"; //台視
-allUrl[9] = "http://gotv.ctitv.com.tw/category/politics-news" //中天
-allUrl[10] = "https://www.ettoday.net/news/focus/%E6%94%BF%E6%B2%BB/" // ETtoday 新聞雲
+// allUrl[6] = "https://news.cts.com.tw/politics/"; //華視
+// allUrl[7] = "https://www.ettoday.net/news/focus/%E6%94%BF%E6%B2%BB/"; //東森
+// allUrl[8] = "https://www.ttv.com.tw/news/catlist/A"; //台視
+// allUrl[9] = "http://gotv.ctitv.com.tw/category/politics-news" //中天
+// allUrl[10] = "https://www.ettoday.net/news/focus/%E6%94%BF%E6%B2%BB/" // ETtoday 新聞雲
 
 var getconition = new Array(10); //文字中的條件 .class title
 
@@ -61,10 +61,14 @@ getIMGconition[10] = "data-original";
 
 
 var getNEWSUrl = new Array(10); //新聞的連結條件
+getNEWSUrl[2] = ".list a";
+getNEWSUrl[5] = ".content_center_contxt_real_news a ";
 getNEWSUrl[10] = "div[class='piece clearfix'] a";
 
 
 var getNEWSconition = new Array(10); //新聞的連結來源
+getNEWSconition[2] = "href";
+getNEWSconition[5] = "href";
 getNEWSconition[10] = "href";
 
 //=======================================================

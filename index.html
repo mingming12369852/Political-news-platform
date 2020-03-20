@@ -36,7 +36,7 @@
 						'<div class="inner">' +
 						'<h3 id="title">' + e['自由時報'][i] + '</h3>' +
 						'<p> ' + "敘述" + '</p>' +
-						'<a href="https://youtu.be/s6zR2T9vn2c" class="button fit" data-poptrox="youtube,800x400">Watch</a>' +
+						'<a href=' + e['自由時報url'][i] + '  " class="button fit" >Click</a>' +
 						'</div>'
 					);
 					$("#ETtoday").append(
@@ -52,9 +52,12 @@
 						'<div class="inner">' +
 						'<h3 id="title">' + e['tvbs'][i] + '</h3>' +
 						'<p> ' + "敘述" + '</p>' +
-						'<a href="https://youtu.be/s6zR2T9vn2c" class="button fit" data-poptrox="youtube,800x400">Watch</a>' +
+						'<a href=https://news.tvbs.com.tw/' + e['tvbsurl'][i] + '  " class="button fit" >Click</a>' +
+
 						'</div>'
 					);
+
+					//https://news.tvbs.com.tw/
 
 					// $("#SanliNews").append("<p>" + +"</p>");
 				}
@@ -128,7 +131,7 @@
 				<li><a href="#" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
 				<li><a href="#" class="icon fa-envelope"><span class="label">Email</span></a></li>
 			</ul> -->
-			<p>/網站目前為開發階段 版本號v3 .00/</p>
+			<p>/網站目前為開發階段 版本號v3 .10/</p>
 			<!-- <p class="copyright">&copy; Untitled. Design: <a href="https://templated.co">TEMPLATED</a>. Images: <a href="https://unsplash.com/">Unsplash</a>. Videos: <a href="http://coverr.co/">Coverr</a>.</p> -->
 		</div>
 		<!-- </footer> -->
