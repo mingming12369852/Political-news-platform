@@ -10,19 +10,19 @@ const http = require("http");
 
 //=================================================
 
-//=================================================Data URL
+//=================================================Data Base For URL
 var all = {};
 var allUrl = new Array(10); // 所有的鏈
 
-allUrl[1] = "https://www.setn.com/Catalog.aspx?PageGroupID=6"; //三立新聞
-allUrl[2] = "http://news.ltn.com.tw/list/breakingnews/politics"; //自由時報
-allUrl[3] = "https://theinitium.com/"; //端媒傳
-allUrl[4] = "https://udn.com/news/cate/2/6638"; //聯合新聞
-allUrl[5] = "https://news.tvbs.com.tw/politics"; //tvbs
-allUrl[6] = "https://news.cts.com.tw/politics/"; //華視
-allUrl[7] = "https://www.ettoday.net/news/focus/%E6%94%BF%E6%B2%BB/"; //東森
-allUrl[8] = "https://www.ttv.com.tw/news/catlist/A"; //台視
-allUrl[9] = "http://gotv.ctitv.com.tw/category/politics-news" //中天
+// allUrl[1] = "https://www.setn.com/Catalog.aspx?PageGroupID=6"; //三立新聞
+// allUrl[2] = "http://news.ltn.com.tw/list/breakingnews/politics"; //自由時報
+// allUrl[3] = "https://theinitium.com/"; //端媒傳
+// allUrl[4] = "https://udn.com/news/cate/2/6638"; //聯合新聞
+// allUrl[5] = "https://news.tvbs.com.tw/politics"; //tvbs
+// allUrl[6] = "https://news.cts.com.tw/politics/"; //華視
+// allUrl[7] = "https://www.ettoday.net/news/focus/%E6%94%BF%E6%B2%BB/"; //東森
+// allUrl[8] = "https://www.ttv.com.tw/news/catlist/A"; //台視
+// allUrl[9] = "http://gotv.ctitv.com.tw/category/politics-news" //中天
 allUrl[10] = "https://www.ettoday.net/news/focus/%E6%94%BF%E6%B2%BB/" // ETtoday 新聞雲
 
 var getconition = new Array(10); //文字中的條件 .class title
@@ -49,8 +49,8 @@ getIMG[7] = ".part_pictxt_3 img";
 getIMG[9] = ".img src";
 getIMG[10] = "div[class='piece clearfix'] img"
 
-//圖片中的連結來源
-var getIMGconition = new Array(10);
+
+var getIMGconition = new Array(10); //圖片中的連結來源
 getIMGconition[1] = "data-original";
 getIMGconition[2] = "src";
 getIMGconition[4] = "data-src";
@@ -60,15 +60,20 @@ getIMGconition[7] = "src";
 getIMGconition[10] = "data-original";
 
 
+var getNEWSUrl = new Array(10); //新聞的連結條件
+getNEWSUrl[10] = "div[class='piece clearfix'] a";
 
 
+var getNEWSconition = new Array(10); //新聞的連結來源
+getNEWSconition[10] = "href";
 
 //=======================================================
 //=================================================
 var obj = [];
 var objimg = [];
+var objurl = [];
 var all = {};
-const finalResult = {}
+// const finalResult = {}
 
 var json_Floor = 0; //暫存　json的位置
 var getdata_name_code = 0; //暫存 名子位置
@@ -85,7 +90,7 @@ for (var x = 0; x < allUrl.length; x++) {
 
   if (allUrl[x] !== null) {
     getdata_name(getdata_name_code); //建立 資料存放 的名稱
-    getData(allUrl[x], "GET", getconition[x], getdata_name_haha, getIMG[x], getIMGconition[x]);
+    getData(allUrl[x], "GET", getconition[x], getdata_name_haha, getIMG[x], getIMGconition[x], getNEWSUrl[x], getNEWSconition[x]);
     //連結,連線方式,文字的class title,n的名稱{ n :Data} ,圖片的class,圖片中的連結來源 src
     getdata_name_code++;
   }
@@ -124,7 +129,7 @@ function startServer() {
 
 }
 
-function getData(url, method, getname, name, img, imgconition) {
+function getData(url, method, getname, name, img, imgconition, newsUrl, newsConition) {
   // console.log(img);
   request({
     url: url,
@@ -136,19 +141,24 @@ function getData(url, method, getname, name, img, imgconition) {
     var $ = cheerio.load(b);
     var titles = $(getname);
     var getimg_ = $(img);
+    var newsUrl_ = $(newsUrl);
+    // console.log(newsConition);
 
     for (var i = 0; i < 5; i++) {
       json_Floor++;
       obj.push($(titles[i]).text().trim()); //抓取每個標題
       objimg.push($(getimg_[i]).attr(imgconition)); //抓取每個照片
-
+      objurl.push($(newsUrl_[i]).attr(newsConition));
 
       all[name] = obj;
       all[name + "img"] = objimg;
+      all[name + "url"] = objurl;
+      console.log(objurl);
     }
 
     obj = [];
     objimg = [];
+    objurl = [];
     fs.writeFileSync("src/json/Data02.json", JSON.stringify({
       all
     }));
