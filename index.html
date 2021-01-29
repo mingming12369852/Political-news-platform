@@ -1,0 +1,149 @@
+<!DOCTYPE HTML>
+<!--
+	Full Motion by TEMPLATED
+	templated.co @templatedco
+	Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
+-->
+<html>
+
+<head>
+	<title>綜合新聞 ｜ 政治</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<link rel="stylesheet" href="assets/css/main.css" />
+	<style media="screen">
+		body::-webkit-scrollbar {
+			display: none;
+		}
+	</style>
+	<script type="text/javascript">
+		var DataUrl = "https://myfist01.herokuapp.com/";
+		// var DataUrl = "https://myfist01.herokuapp.com/";
+		var request = new XMLHttpRequest();
+		var title = [];
+		var title_tex = [];
+		request.open('get', DataUrl, true);
+		request.responseType = 'json';
+		request.send();
+
+		function GetData() {
+			$.getJSON(DataUrl, function(e) {
+
+				for (var i = 0; i < 5; i++) {
+					console.log(e);
+					$("#SanliNews").append(
+						'<a class="image fit"><img src="' + e['自由時報img'][i] + '"/></a>' +
+						'<div class="inner">' +
+						'<h3 id="title">' + e['自由時報'][i] + '</h3>' +
+						'<p> ' + "敘述" + '</p>' +
+						'<a href=' + e['自由時報url'][i] + '  " class="button fit" >Click</a>' +
+						'</div>'
+					);
+					$("#ETtoday").append(
+						'<a class="image fit"><img src="https:' + e['EToday 新聞雲img'][i] + '"/></a>' +
+						'<div class="inner">' +
+						'<h3 id="title">' + e['EToday 新聞雲'][i] + '</h3>' +
+						'<p> ' + "敘述" + '</p>' +
+						'<a href=https://www.ettoday.net' + e['EToday 新聞雲url'][i] + '  " class="button fit" >Click</a>' +
+						'</div>'
+					);
+					$("#TVBS").append(
+						'<a class="image fit"><img src="' + e['tvbsimg'][i] + '"/></a>' +
+						'<div class="inner">' +
+						'<h3 id="title">' + e['tvbs'][i] + '</h3>' +
+						'<p> ' + "敘述" + '</p>' +
+						'<a href=https://news.tvbs.com.tw/' + e['tvbsurl'][i] + '  " class="button fit" >Click</a>' +
+
+						'</div>'
+					);
+
+					//https://news.tvbs.com.tw/
+
+					// $("#SanliNews").append("<p>" + +"</p>");
+				}
+				// $("#")
+				// console.log(e['自由時報'][2]);
+			});
+
+			console.log("Ha! why you click me !! :(");
+		}
+	</script>
+</head>
+
+<body id="top" onload="GetData()">
+
+	<!-- Banner -->
+	<!--
+				To use a video as your background, set data-video to the name of your video without
+				its extension (eg. images/banner). Your video must be available in both .mp4 and .webm
+				formats to work correctly.
+			-->
+	<section id="banner" data-video="images/banner">
+		<div class="inner">
+			<header>
+				<h1>綜合新聞 ｜ 政治</h1>
+				<p>瀏覽你平時就已經在"關注"的媒體。 <br />
+					在這裡你也能看到其他家媒體是如何對事情下標題的？</p><br>
+			</header>
+			<a href="#main" class="more">Learn More</a>
+			<!-- <button type="button" name="button" onClick="GetData()">Get Me</button> -->
+		</div>
+	</section>
+
+	<!-- Main -->
+	<div id="main">
+
+		<div class="inner">
+
+			<!-- Boxes -->
+			<div class="thumbnails">
+
+				<div class="box" id="SanliNews">
+					<h1>自由時報</h1>
+				</div>
+
+				<div class="box" id="ETtoday">
+					<h1>EToday 新聞雲</h1>
+				</div>
+
+				<div class="box" id="TVBS">
+					<h1>TVBS</h1>
+				</div>
+
+			</div>
+
+
+
+		</div>
+	</div>
+
+	<!-- Footer -->
+	<footer id="footer">
+		<div class="inner">
+			<h2>關於 雜燴新聞</h2>
+			<p>我們希望這個平台，能夠給已經在關注網頁新聞的人，或是第一次看網路媒體的人。<br>
+				以寬廣的視野以及不同的角度去關注目前的時事不管你是左派還是右派，都希望能以中立的角度去看待世界上所正在發生的每件事情。
+				<br>建立起正確的價值觀，走訪世界上的大小事情。 </p>
+
+			<!-- <ul class="icons">
+				<li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+				<li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
+				<li><a href="#" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
+				<li><a href="#" class="icon fa-envelope"><span class="label">Email</span></a></li>
+			</ul> -->
+			<p>/網站目前為開發階段 版本號v3 .10/</p>
+			<!-- <p class="copyright">&copy; Untitled. Design: <a href="https://templated.co">TEMPLATED</a>. Images: <a href="https://unsplash.com/">Unsplash</a>. Videos: <a href="http://coverr.co/">Coverr</a>.</p> -->
+		</div>
+		<!-- </footer> -->
+
+		<!-- Scripts -->
+		<script src="assets/js/jquery.min.js"></script>
+		<script src="assets/js/jquery.scrolly.min.js"></script>
+		<script src="assets/js/jquery.poptrox.min.js"></script>
+		<script src="assets/js/skel.min.js"></script>
+		<script src="assets/js/util.js"></script>
+		<script src="assets/js/main.js"></script>
+
+</body>
+
+</html>
